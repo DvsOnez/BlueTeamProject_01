@@ -69,14 +69,14 @@
             // salariesToolStripMenuItem
             // 
             this.salariesToolStripMenuItem.Name = "salariesToolStripMenuItem";
-            this.salariesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salariesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.salariesToolStripMenuItem.Text = "Salaries";
             this.salariesToolStripMenuItem.Click += new System.EventHandler(this.Salaries_Click);
             // 
             // expensesToolStripMenuItem
             // 
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
-            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.expensesToolStripMenuItem.Text = "Expenses";
             // 
             // employeesToolStripMenuItem
@@ -157,6 +157,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.welcome_to_our_cafe_chalkboard_printable_bon_appetit_hand_lettering_calligraphy_greeting_63079955;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.checkedListBoxControl1);
             this.Controls.Add(this.button2);

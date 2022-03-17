@@ -34,6 +34,7 @@
             this.Coffee = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.unboundSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,13 +73,24 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(563, 188);
+            this.button4.Location = new System.Drawing.Point(560, 188);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(216, 174);
             this.button4.TabIndex = 12;
             this.button4.Text = "Food";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.FoodButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(292, 463);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(216, 117);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "CONFIRM";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // Order
             // 
@@ -87,6 +99,7 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.photo0jpg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(801, 625);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Coffee);
@@ -104,5 +117,6 @@
         private Button Coffee;
         private Button button3;
         private Button button4;
+        private Button button2;
     }
 }
