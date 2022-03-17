@@ -65,6 +65,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.welcome_to_our_cafe_chalkboard_printable_bon_appetit_hand_lettering_calligraphy_greeting_63079955;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.simpleButton2);

@@ -14,6 +14,9 @@ namespace CoffeeShopForms{
        
     {
         private Completion Completion;
+        private Coffee coffee;
+        private Beverage beverage;
+        private Food food;
         public Order()
         {
             InitializeComponent();
@@ -28,6 +31,25 @@ namespace CoffeeShopForms{
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CoffeeButton_Click(object sender, EventArgs e)
+        {
+            coffee = new Coffee();
+            coffee.ShowDialog();
+
+        }
+
+        private void BeverageButton_Click(object sender, EventArgs e)
+        {
+            beverage = new Beverage();
+            beverage.ShowDialog();
+        }
+
+        private void FoodButton_Click(object sender, EventArgs e)
+        {
+            food = new Food();
+            food.ShowDialog();
         }
     }
 }
