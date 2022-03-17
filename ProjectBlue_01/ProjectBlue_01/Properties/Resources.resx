@@ -121,16 +121,28 @@
   <data name="photo0jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\photo0jpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="png-clipart-menu-cafe-restaurant-wine-list-european-style-lace-menu-logo-food-chinese-style" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-clipart-menu-cafe-restaurant-wine-list-european-style-lace-menu-logo-food-chinese-style.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="welcome-to-our-cafe-chalkboard-printable-bon-appetit-hand-lettering-calligraphy-greeting-63079955" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome-to-our-cafe-chalkboard-printable-bon-appetit-hand-lettering-calligraphy-greeting-63079955.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="αρχείο λήψης" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\αρχείο λήψης.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="jailbirds_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jailbirds_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee_cover_v06" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee_cover_v06.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="welcome-to-our-cafe-chalkboard-printable-bon-appetit-hand-lettering-calligraphy-greeting-63079955" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\welcome-to-our-cafe-chalkboard-printable-bon-appetit-hand-lettering-calligraphy-greeting-63079955.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6179a7473854b15e11196ea6_shutterstock_1389455627" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6179a7473854b15e11196ea6_shutterstock_1389455627.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expenses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expenses.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jailbirds_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jailbirds_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seo-salary-report-60e4618f40216-sej-1520x800" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seo-salary-report-60e4618f40216-sej-1520x800.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
