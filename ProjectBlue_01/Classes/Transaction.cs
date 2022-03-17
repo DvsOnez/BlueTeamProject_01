@@ -15,11 +15,7 @@ namespace Classes
         public double TotalPrice { get; set; }
 
         List<TransactionLine> Lines { get; set; }
-        public enum PaymentMethod
-        {
-            Chash,
-            CreditCard
-        }
+        public enum PaymentMethod { Cash, CreditCard }
         //public  
         public Transaction()
         {

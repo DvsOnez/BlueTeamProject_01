@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class TransactionLine
+    internal class TransactionLine
     {
         public Guid ID { get; }
         public Guid ProductID { get; }
         public int Quantity { get; set; }
-        public double Price { get; set; } // mipws de xreiazetai price
+        public double Price { get; set; } 
         public double Discount { get; set; }
         public double TotalPrice { get; set; }
 
@@ -22,7 +22,7 @@ namespace Classes
 
         public double GetPrice(int quantity, Product product)
         {
-            return quantity; //* product.price;
+            return quantity * product.Price;
         }
 
         public double GetTotal(int price) {
