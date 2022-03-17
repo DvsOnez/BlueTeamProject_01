@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Transaction
+    [Serializable]
+    internal class Transaction
     {
+        private const string TRANS_STORAGE = "transStorage.json";
+
         public Guid ID { get; }
         public Guid CustomerID { get; }
         public Guid EmployeeID { get; }
@@ -20,15 +24,24 @@ namespace Classes
         public Transaction()
         {
             ID = Guid.NewGuid();
+            Lines = new List<TransactionLine>();
 
         }
 
-        public void GetTotalPrice(List<TransactionLine> lines) //return doouble?
+        public void GetTotalPrice(List<TransactionLine> lines) //return double?
         {
             for (int i = 0; i < lines.Count; i++)
             {
                 TotalPrice += lines[i].TotalPrice;
             }
+        }
+
+        public void SaveTransaction() {
+            if(File.Exists("transStorage.json")) {
+                //Load
+            }
+
+            string json = JsonSerializer.Serialize();
         }
     }
 }

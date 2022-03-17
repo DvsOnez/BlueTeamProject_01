@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Monthly_Ledger
+    internal class Monthly_Ledger
     {
         public int Year { get; set; }
         public int Month { get; }
         public double Income { get; }
         public double Expences { get; }
         public double Total { get; }
+        public List<Transaction> Transactions { get; }
 
         public Monthly_Ledger()
         {
