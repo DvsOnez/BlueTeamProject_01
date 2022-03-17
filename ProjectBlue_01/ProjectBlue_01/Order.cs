@@ -8,13 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopForms
-{
-    public partial class Order : Form
+namespace CoffeeShopForms{
+    
+        public partial class Order : Form
+       
     {
+        private Completion Completion;
         public Order()
         {
             InitializeComponent();
+        }
+
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
+           Completion completion = new Completion();
+           completion.ShowDialog();
+        }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

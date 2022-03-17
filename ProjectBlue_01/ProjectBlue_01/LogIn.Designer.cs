@@ -30,33 +30,47 @@
         {
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(112, 152);
+            this.simpleButton1.Location = new System.Drawing.Point(253, 177);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(104, 71);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Log in as Admin";
+            this.simpleButton1.Click += new System.EventHandler(this.AdminButton_Click);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(547, 152);
+            this.simpleButton2.Location = new System.Drawing.Point(388, 177);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(104, 71);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "Log in as Employee";
+            this.simpleButton2.Click += new System.EventHandler(this.EmployeeButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 398);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Name = "LogIn";
-            this.Text = "Form1";
+            this.Text = "Coffee Shop";
             this.ResumeLayout(false);
 
         }
@@ -65,5 +79,6 @@
 
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private Button button1;
     }
 }
