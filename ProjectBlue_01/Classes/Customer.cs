@@ -8,10 +8,6 @@ namespace Classes
 {
     internal class Customer : Base
     {
-        //public Guid CustomerID { get; set; }
-        //public string CustomerCode { get; set; }
-        //public string Description { get; set; }
-
         public Customer()
         {
 

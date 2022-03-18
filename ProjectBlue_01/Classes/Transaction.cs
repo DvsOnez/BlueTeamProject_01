@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Classes
 {
     [Serializable]
-    internal class Transaction
+    public class Transaction
     {
         private const string TRANS_STORAGE = "transStorage.json";
 

@@ -1,7 +1,7 @@
 ﻿namespace Classes
 {
     [Serializable]
-    internal class Employee
+    public class Employee
     {
         private const string EMPLOYEE_STORAGE = "employeeStorage.json";
         public Guid ID { get;  } 

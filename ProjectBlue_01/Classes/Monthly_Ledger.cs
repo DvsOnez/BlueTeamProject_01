@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    internal class Monthly_Ledger
+    public class Monthly_Ledger
     {
         public int Year { get; set; }
         public int Month { get; }
