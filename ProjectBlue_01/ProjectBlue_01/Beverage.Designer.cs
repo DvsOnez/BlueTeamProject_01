@@ -44,12 +44,12 @@
             // 
             // BeverageGrid
             // 
-            this.BeverageGrid.Location = new System.Drawing.Point(167, 31);
+            this.BeverageGrid.Location = new System.Drawing.Point(0, 0);
             this.BeverageGrid.MainView = this.BeverageGrv;
             this.BeverageGrid.Name = "BeverageGrid";
             this.BeverageGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1});
-            this.BeverageGrid.Size = new System.Drawing.Size(455, 300);
+            this.BeverageGrid.Size = new System.Drawing.Size(542, 441);
             this.BeverageGrid.TabIndex = 0;
             this.BeverageGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.BeverageGrv});
@@ -60,15 +60,18 @@
             this.CallBeverages,
             this.CallPrice,
             this.CallQuantity});
+            this.BeverageGrv.CustomizationFormBounds = new System.Drawing.Rectangle(2543, 342, 264, 272);
             this.BeverageGrv.GridControl = this.BeverageGrid;
             this.BeverageGrv.Name = "BeverageGrv";
+            this.BeverageGrv.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.CallPrice, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // CallBeverages
             // 
             this.CallBeverages.Caption = "Beverages";
             this.CallBeverages.Name = "CallBeverages";
             this.CallBeverages.Visible = true;
-            this.CallBeverages.VisibleIndex = 2;
+            this.CallBeverages.VisibleIndex = 0;
             // 
             // CallPrice
             // 
@@ -82,7 +85,7 @@
             this.CallQuantity.Caption = "Quantity";
             this.CallQuantity.Name = "CallQuantity";
             this.CallQuantity.Visible = true;
-            this.CallQuantity.VisibleIndex = 0;
+            this.CallQuantity.VisibleIndex = 2;
             // 
             // repositoryItemSpinEdit1
             // 
@@ -95,7 +98,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(189, 367);
+            this.button1.Location = new System.Drawing.Point(548, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 71);
             this.button1.TabIndex = 1;
@@ -106,7 +109,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(491, 367);
+            this.button2.Location = new System.Drawing.Point(548, 322);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 71);
             this.button2.TabIndex = 2;

@@ -105,7 +105,7 @@
             this.Controls.Add(this.Coffee);
             this.Controls.Add(this.button1);
             this.Name = "Order";
-            this.Text = "Menu";
+            this.Text = "Menu";           
             ((System.ComponentModel.ISupportInitialize)(this.unboundSource1)).EndInit();
             this.ResumeLayout(false);
 

@@ -37,14 +37,14 @@
             // 
             this.simpleButton1.Location = new System.Drawing.Point(253, 177);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 71);
+            this.simpleButton1.Size = new System.Drawing.Size(109, 71);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Log in as Admin";
             this.simpleButton1.Click += new System.EventHandler(this.AdminButton_Click);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(388, 177);
+            this.simpleButton2.Location = new System.Drawing.Point(439, 177);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(104, 71);
             this.simpleButton2.TabIndex = 1;
