@@ -32,22 +32,29 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.CoffeeGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PriceGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.QuantityGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(152, 36);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(429, 280);
+            this.gridControl1.Size = new System.Drawing.Size(557, 448);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CoffeeGrid,
+            this.PriceGrid,
+            this.QuantityGrid});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -55,7 +62,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Sienna;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(175, 364);
+            this.button1.Location = new System.Drawing.Point(565, 222);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 74);
             this.button1.TabIndex = 1;
@@ -66,13 +73,34 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Sienna;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(446, 364);
+            this.button2.Location = new System.Drawing.Point(565, 302);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 74);
             this.button2.TabIndex = 2;
             this.button2.Text = "BACK";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // CoffeeGrid
+            // 
+            this.CoffeeGrid.Caption = "Coffee";
+            this.CoffeeGrid.Name = "CoffeeGrid";
+            this.CoffeeGrid.Visible = true;
+            this.CoffeeGrid.VisibleIndex = 0;
+            // 
+            // PriceGrid
+            // 
+            this.PriceGrid.Caption = "Price";
+            this.PriceGrid.Name = "PriceGrid";
+            this.PriceGrid.Visible = true;
+            this.PriceGrid.VisibleIndex = 1;
+            // 
+            // QuantityGrid
+            // 
+            this.QuantityGrid.Caption = "Quantity";
+            this.QuantityGrid.Name = "QuantityGrid";
+            this.QuantityGrid.Visible = true;
+            this.QuantityGrid.VisibleIndex = 2;
             // 
             // Coffee
             // 
@@ -98,5 +126,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private Button button1;
         private Button button2;
+        private DevExpress.XtraGrid.Columns.GridColumn CoffeeGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn PriceGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn QuantityGrid;
     }
 }

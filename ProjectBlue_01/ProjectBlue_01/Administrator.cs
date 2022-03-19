@@ -17,7 +17,7 @@ namespace CoffeeShopForms
         private Expenses expenses;
         private EmployeeEdit employeeEdit;
         private Salaries salaries;  
-        private Menu menu;
+        private MenuGrv menu;
         public Administrator()
 
         {
@@ -55,7 +55,7 @@ namespace CoffeeShopForms
 
         private void MenuEdit_Click(object sender, EventArgs e)
         {
-            menu = new Menu();
+            menu = new MenuGrv();
             menu.ShowDialog();
         }
     }
