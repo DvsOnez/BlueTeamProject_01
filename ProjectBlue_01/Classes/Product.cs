@@ -23,7 +23,7 @@ namespace Classes
     public class Coffee : Product
     {
         public const string FILE_NAME = "CoffeeStorage.json";
-        public List<Product> Coffees { get; set; }
+        public List<Product> Caffees { get; set; }
         public Coffee()
         {
 
@@ -31,7 +31,7 @@ namespace Classes
 
         public void AddNewCoffee(Product product)
         {
-           Coffees.Add(product);
+           Caffees.Add(product);
         }
     }
 
