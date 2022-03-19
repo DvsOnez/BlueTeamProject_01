@@ -8,6 +8,8 @@ namespace Classes
 {
     public class Product : Base
     {
+
+        public Guid ProductID { get; set; }
         public Guid ProductCategoryID { get; set; }
         public double Price { get; set; }
         public double Cost { get; set; }

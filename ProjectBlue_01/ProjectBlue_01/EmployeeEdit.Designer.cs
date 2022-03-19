@@ -28,82 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlEmployees = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpPositionGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
+            this.AddButton = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // gridControlEmployees
             // 
-            this.gridControl1.Location = new System.Drawing.Point(3, 4);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(785, 413);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControlEmployees.Location = new System.Drawing.Point(12, 26);
+            this.gridControlEmployees.MainView = this.gridView1;
+            this.gridControlEmployees.Name = "gridControlEmployees";
+            this.gridControlEmployees.Size = new System.Drawing.Size(764, 357);
+            this.gridControlEmployees.TabIndex = 0;
+            this.gridControlEmployees.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.EmpPositionGrid,
-            this.EmpIDGrid,
-            this.EmpNameGrid});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridControlEmployees;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // EmpNameGrid
+            // SaveButton
             // 
-            this.EmpNameGrid.Caption = "EmpName";
-            this.EmpNameGrid.Name = "EmpNameGrid";
-            this.EmpNameGrid.Visible = true;
-            this.EmpNameGrid.VisibleIndex = 0;
+            this.SaveButton.Location = new System.Drawing.Point(459, 389);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 1;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // EmpIDGrid
+            // AddButton
             // 
-            this.EmpIDGrid.Caption = "EmpID";
-            this.EmpIDGrid.Name = "EmpIDGrid";
-            this.EmpIDGrid.Visible = true;
-            this.EmpIDGrid.VisibleIndex = 1;
+            this.AddButton.Location = new System.Drawing.Point(540, 389);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.TabIndex = 2;
+            this.AddButton.Text = "Add";
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // EmpPositionGrid
+            // simpleButton3
             // 
-            this.EmpPositionGrid.Caption = "EmpPosition";
-            this.EmpPositionGrid.Name = "EmpPositionGrid";
-            this.EmpPositionGrid.Visible = true;
-            this.EmpPositionGrid.VisibleIndex = 2;
+            this.simpleButton3.Location = new System.Drawing.Point(621, 389);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "simpleButton3";
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(536, 423);
+            this.simpleButton1.Location = new System.Drawing.Point(701, 389);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Add";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(617, 423);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Remove";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(713, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Back";
+            this.simpleButton1.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // EmployeeEdit
             // 
@@ -112,13 +96,15 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources._6179a7473854b15e11196ea6_shutterstock_1389455627;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.gridControlEmployees);
             this.Name = "EmployeeEdit";
             this.Text = "Employees";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            this.Load += new System.EventHandler(this.EmployeeEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -126,13 +112,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlEmployees;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpPositionGrid;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpIDGrid;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpNameGrid;
+        private DevExpress.XtraEditors.SimpleButton SaveButton;
+        private DevExpress.XtraEditors.SimpleButton AddButton;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private Button button1;
     }
 }

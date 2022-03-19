@@ -16,6 +16,7 @@ namespace Classes
         public CoffeeShop()
         {
             Employees = new List<Employee>();
+            SingleCustomer = new Customer();
         }
 
         

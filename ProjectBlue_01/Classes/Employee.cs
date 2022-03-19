@@ -13,7 +13,7 @@
         public enum EmployeeType { Manager, Cashier, Barista, Waiter}
 
         public Employee() {
-
+            ID = Guid.NewGuid();
         }
     }
 }
