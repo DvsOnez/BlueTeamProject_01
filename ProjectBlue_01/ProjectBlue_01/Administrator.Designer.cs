@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.financeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salariesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,23 +57,15 @@
             // financeToolStripMenuItem
             // 
             this.financeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salariesToolStripMenuItem,
             this.expensesToolStripMenuItem});
             this.financeToolStripMenuItem.Name = "financeToolStripMenuItem";
             this.financeToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.financeToolStripMenuItem.Text = "Finance";
             // 
-            // salariesToolStripMenuItem
-            // 
-            this.salariesToolStripMenuItem.Name = "salariesToolStripMenuItem";
-            this.salariesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.salariesToolStripMenuItem.Text = "Salaries";
-            this.salariesToolStripMenuItem.Click += new System.EventHandler(this.Salaries_Click);
-            // 
             // expensesToolStripMenuItem
             // 
             this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
-            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.expensesToolStripMenuItem.Text = "Expenses";
             this.expensesToolStripMenuItem.Click += new System.EventHandler(this.ExpensesButton_Click);
             // 
@@ -89,7 +80,7 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.EmployeeEdit_Click);
             // 
@@ -104,7 +95,7 @@
             // editMenuToolStripMenuItem
             // 
             this.editMenuToolStripMenuItem.Name = "editMenuToolStripMenuItem";
-            this.editMenuToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.editMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editMenuToolStripMenuItem.Text = "Edit Menu";
             this.editMenuToolStripMenuItem.Click += new System.EventHandler(this.MenuEdit_Click);
             // 
@@ -149,6 +140,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Administrator";
             this.Text = "Administrator";
+            this.Load += new System.EventHandler(this.Administrator_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
@@ -161,7 +153,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem financeToolStripMenuItem;
-        private ToolStripMenuItem salariesToolStripMenuItem;
         private ToolStripMenuItem expensesToolStripMenuItem;
         private ToolStripMenuItem employeesToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
