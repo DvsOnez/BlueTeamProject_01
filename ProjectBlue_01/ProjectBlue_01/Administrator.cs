@@ -58,6 +58,7 @@ namespace CoffeeShopForms
         private void MenuEdit_Click(object sender, EventArgs e)
         {
             menu = new MenuGrv();
+            menu.CurrentShop = CurrentShop;
             menu.ShowDialog();
         }
 
