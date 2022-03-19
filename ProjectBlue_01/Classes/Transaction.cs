@@ -10,13 +10,15 @@ namespace Classes
     [Serializable]
     public class Transaction
     {
-        private const string TRANS_STORAGE = "transStorage.json";
+        public const string TRANS_STORAGE = "transStorage.json";
 
         public Guid ID { get; }
         public Guid CustomerID { get; }
         public Guid EmployeeID { get; }
         public DateTime Date { get; }
         public double TotalPrice { get; set; }
+        public double TransCost { get; set; }
+
 
         public List<TransactionLine> Lines { get; set; }
         public List<Transaction> Transactions { get; set; } = new List<Transaction>();
@@ -33,15 +35,31 @@ namespace Classes
         public void AddTransactionLine(Transaction trans, TransactionLine transLine) {
             trans.Lines.Add(transLine);
         }
+        public void AddTransactionLine(TransactionLine transLine) { //ver2
+            Lines.Add(transLine);
+        }
 
-        public double GetTotalPrice(List<TransactionLine> lines) //return double?
-        {
+        //public double GetTotalPrice(List<TransactionLine> lines) //return double?
+        //{
+        //    double totalPrice = 0;
+        //    for (int i = 0; i < lines.Count; i++)
+        //    {
+        //        TotalPrice += lines[i].TotalPrice;
+        //    }
+        //    return TotalPrice;
+        //}
+        public void GetTotalPrice() { //return double?
             double totalPrice = 0;
-            for (int i = 0; i < lines.Count; i++)
-            {
-                TotalPrice += lines[i].TotalPrice;
+            for (int i = 0; i < Lines.Count; i++) {
+                TotalPrice += Lines[i].TotalPrice;
+            }       
+        }
+        public void GetTotalCost(List<TransactionLine> lines) {
+            //double cost = 0;
+            for (int i = 0; i<lines.Count; i++) {
+                TransCost += lines[i].LineCost;
             }
-            return TotalPrice;
+            //TotalCost = cost;   
         }
 
         private Transaction _transaction;

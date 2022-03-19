@@ -45,16 +45,25 @@ namespace ProjectBlue_01
             product2.Cost = 0.1;
             product2.Code = "12";
 
-            List<TransactionLine> list = new List<TransactionLine>();
             TransactionLine transactionLine = new TransactionLine();
-            //transactionLine.GetPrice(2, product);
-            double d = transactionLine.GetPrice(2, product);
+            transactionLine.GetPrice(2, product);
+            transactionLine.GetTotalPrice(transactionLine.Price);
+            //double d = transactionLine.GetPrice(2, product);
             tr.AddTransactionLine(tr, transactionLine);
+            //tr.AddTransLine(transactionLine);
 
             TransactionLine transactionLine2 = new TransactionLine();
-            transactionLine.GetPrice(2, product2);
+            transactionLine2.GetPrice(2, product2);
+            transactionLine2.GetTotalPrice(2, product2);
             tr.AddTransactionLine(tr, transactionLine2);
-            tr.GetTotalPrice(list);
+            //tr.AddTransLine(transactionLine2);
+
+            //List<TransactionLine> list = new List<TransactionLine>();
+            //list.Add(transactionLine);
+            //list.Add(transactionLine2);
+
+            //tr.GetTotalPrice(list);
+            tr.GetTotalPrice();
 
             tr.SaveTransaction(tr);
         }
