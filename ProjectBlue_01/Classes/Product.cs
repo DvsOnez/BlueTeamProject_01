@@ -17,50 +17,5 @@ namespace Classes
         {
 
         }
-
-    }
-
-    public class Coffee : Product
-    {
-        public const string FILE_NAME = "CoffeeStorage.json";
-        public List<Product> Caffees { get; set; }
-        public Coffee()
-        {
-
-        }
-
-        public void AddNewCoffee(Product product)
-        {
-           Caffees.Add(product);
-        }
-    }
-
-    public class Beverage : Product
-    {
-        public const string FILE_NAME = "BeverageStorage.json";
-        public List<Product> Beverages { get; set; }
-        public Beverage()
-        {
-
-        }
-
-        public void AddNewBeverage(Product product)
-        {
-            Beverages.Add(product);
-        }
-    }
-
-    public class Food : Product
-    {
-        public const string FILE_NAME = "FoodStorage.json";
-        public List<Product> Foods { get; set; }
-        public Food()
-        {
-
-        }
-        public void AddNewFood(Product product)
-        {
-            Foods.Add(product);
-        }
     }
 }
