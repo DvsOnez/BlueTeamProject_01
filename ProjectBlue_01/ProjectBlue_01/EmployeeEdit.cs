@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,32 @@ namespace CoffeeShopForms
 {
     public partial class EmployeeEdit : Form
     {
+        public CoffeeShop CurrentShop { get; set; }
+        public BindingSource bsEmployees { get; set; }
         public EmployeeEdit()
         {
             InitializeComponent();
+            bsEmployees = new BindingSource();
+        }
+
+        private void EmployeeEdit_Load(object sender, EventArgs e)
+        {
+            bsEmployees.DataSource = CurrentShop.Employees;
+            gridControlEmployees.DataSource = bsEmployees;
+        }
+
+
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            CurrentShop.SaveEmployees();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            CurrentShop.Employees.Add(emp);
+            bsEmployees.ResetBindings(true);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace CoffeeShopForms
 {
     public partial class Administrator : Form
     {
+        public CoffeeShop CurrentShop { get; set; }
         private LogIn logIn;
         private Expenses expenses;
         private EmployeeEdit employeeEdit;
@@ -23,6 +24,7 @@ namespace CoffeeShopForms
 
         {
             InitializeComponent();
+            CurrentShop = new CoffeeShop();
 
            
         }
@@ -53,6 +55,7 @@ namespace CoffeeShopForms
         private void EmployeeEdit_Click(object sender, EventArgs e)
         {
             employeeEdit = new EmployeeEdit();
+            employeeEdit.CurrentShop = CurrentShop;
             employeeEdit.ShowDialog();
         }
 
@@ -60,6 +63,16 @@ namespace CoffeeShopForms
         {
             menu = new Menu();
             menu.ShowDialog();
+        }
+
+        private void Administrator_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentShop.LoadEmployees();
+            }
+            catch { }
+
         }
     }
 }
