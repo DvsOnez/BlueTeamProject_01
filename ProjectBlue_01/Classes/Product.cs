@@ -8,9 +8,8 @@ namespace Classes
 {
     public class Product : Base
     {
-        public Guid ProductCategoryID { get; set; }//correction
+        public Guid ProductCategoryID { get; set; }
         public double Price { get; set; }
-        //this I dont know the use of
         public double Cost { get; set; }
 
         public Product()
