@@ -8,30 +8,57 @@ namespace Classes
 {
     public class TransactionLine
     {
+        private const double discLimit = 10;
+        private const double discRate = 0.15;
         public Guid ID { get; }
         public Guid ProductID { get; }
-        public int Quantity { get; set; }
         public double Price { get; set; } 
-        public double Discount { get; set; }
+        public bool Discount { get; set; }
         public double TotalPrice { get; set; }
+        public double LineCost { get; set; }
 
         public TransactionLine()
         {
             ID = Guid.NewGuid();
+            Discount = false;
         }
 
-        public double GetPrice(int quantity, Product product)
-        {
-            return quantity * product.Price;
+        //public double  GetPrice(int quantity, Product product)
+        //{
+        //    return quantity * product.Price;
+        //}
+        public void GetPrice(int quantity, Product product) {
+            Price = quantity * product.Price;
         }
-
-        public double GetTotal(int price) {
-            if (price < 10)
-            {
-                return price;
+        public void GetCost(int quantity, Product product) {
+            LineCost = quantity * product.Cost;
+        }
+        public double GetTotalPrice(int quantity, Product product) {
+            Price = 0;
+            GetPrice(quantity, product);
+            if (Price < discLimit) {
+                return Price;
+            }
+            else {
+                Discount = true;
+                return (Price - (Price * discRate));
+            }
+        }
+        public void GetTotalPrice(double price) {
+            if (price > discLimit) {
+                Price = (Price - (Price * discRate));
             }
             else
-                return price - (price * 0.15);
+                Price = price;
         }
+        //public void GetTotalPrice(int quantity, Product product) {
+        //    double price = GetPrice(quantity, product);
+
+        //    if (price > discLimit) {
+        //        Price = Price - (Price * discRate);
+        //    }
+        //    else
+        //        Price = price;
+        //}
     }
 }

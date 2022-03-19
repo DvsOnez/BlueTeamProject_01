@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
+    public enum ProductTypeEnum
+    {
+        Coffee = 0,
+        Beverages = 1,
+        Food = 2,
+    }
     public class ProductCategory : Base
     {
 
@@ -13,12 +19,24 @@ namespace Classes
         {
 
         }
-
-        public enum ProductTypeEnum
+        public void ChooseCategory(string productType,Product product)
         {
-            Coffe=0,
-            Beverages=1,
-            Food =2,
+            if (productType == ProductTypeEnum.Coffee.ToString())
+            {
+                Coffee coffee = new Coffee();
+                coffee.AddNewCoffee(product);
+            }
+            else if (productType == ProductTypeEnum.Beverages.ToString())
+            {
+                Beverage beverage = new Beverage();
+                beverage.AddNewBeverage(product);
+            }
+            else if (productType == ProductTypeEnum.Food.ToString())
+            {
+                Food food = new Food();
+                food.AddNewFood(product);
+            }
+            
         }
     }
 }
