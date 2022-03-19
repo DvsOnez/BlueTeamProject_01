@@ -30,12 +30,13 @@
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmpPositionGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.EmpSalaryGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,16 +56,17 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.EmpPositionGrid,
             this.EmpIDGrid,
-            this.EmpNameGrid});
+            this.EmpNameGrid,
+            this.EmpSalaryGrid});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // EmpNameGrid
+            // EmpPositionGrid
             // 
-            this.EmpNameGrid.Caption = "EmpName";
-            this.EmpNameGrid.Name = "EmpNameGrid";
-            this.EmpNameGrid.Visible = true;
-            this.EmpNameGrid.VisibleIndex = 0;
+            this.EmpPositionGrid.Caption = "EmpPosition";
+            this.EmpPositionGrid.Name = "EmpPositionGrid";
+            this.EmpPositionGrid.Visible = true;
+            this.EmpPositionGrid.VisibleIndex = 2;
             // 
             // EmpIDGrid
             // 
@@ -73,12 +75,12 @@
             this.EmpIDGrid.Visible = true;
             this.EmpIDGrid.VisibleIndex = 1;
             // 
-            // EmpPositionGrid
+            // EmpNameGrid
             // 
-            this.EmpPositionGrid.Caption = "EmpPosition";
-            this.EmpPositionGrid.Name = "EmpPositionGrid";
-            this.EmpPositionGrid.Visible = true;
-            this.EmpPositionGrid.VisibleIndex = 2;
+            this.EmpNameGrid.Caption = "EmpName";
+            this.EmpNameGrid.Name = "EmpNameGrid";
+            this.EmpNameGrid.Visible = true;
+            this.EmpNameGrid.VisibleIndex = 0;
             // 
             // simpleButton1
             // 
@@ -104,6 +106,14 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // EmpSalaryGrid
+            // 
+            this.EmpSalaryGrid.Caption = "EmpSalary";
+            this.EmpSalaryGrid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.EmpSalaryGrid.Name = "EmpSalaryGrid";
+            this.EmpSalaryGrid.Visible = true;
+            this.EmpSalaryGrid.VisibleIndex = 3;
             // 
             // EmployeeEdit
             // 
@@ -134,5 +144,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private Button button1;
+        private DevExpress.XtraGrid.Columns.GridColumn EmpSalaryGrid;
     }
 }
