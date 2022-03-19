@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    internal class Customer : Base
+    public class Customer : Base
     {
         public Customer()
         {
