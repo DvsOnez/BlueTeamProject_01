@@ -20,9 +20,12 @@ namespace Classes
 
         }
 
-        public string GetReport(int month, int year)
+        public string GetReport(int month, double income, double expenses, int year)
         {
-            return "";
+            return "Month: " + month + "\nIncome: " + income + "\nExpenses: " + expenses + "\nTotal: ";
+        }
+        public string GetMonth(DateTime date) {
+            return date.Month.ToString();
         }
     }
 }

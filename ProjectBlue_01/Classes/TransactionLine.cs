@@ -22,10 +22,11 @@ namespace Classes
 
         public double GetPrice(int quantity, Product product)
         {
+            //Price = quantity * product.Price;
             return quantity * product.Price;
         }
 
-        public double GetTotal(int price) {
+        public double GetTotalPrice(double price) {
             if (price < 10)
             {
                 return price;
