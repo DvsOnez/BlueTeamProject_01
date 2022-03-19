@@ -140,6 +140,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Administrator";
             this.Text = "Administrator";
+            this.Load += new System.EventHandler(this.Administrator_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();

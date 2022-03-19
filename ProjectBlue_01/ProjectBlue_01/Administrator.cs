@@ -1,4 +1,5 @@
-﻿using ProjectBlue_01;
+﻿using Classes;
+using ProjectBlue_01;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace CoffeeShopForms
 {
     public partial class Administrator : Form
     {
+        public CoffeeShop CurrentShop { get; set; }
         private LogIn logIn;
         private Expenses expenses;
         private EmployeeEdit employeeEdit;
@@ -22,6 +24,9 @@ namespace CoffeeShopForms
 
         {
             InitializeComponent();
+            CurrentShop = new CoffeeShop();
+
+           
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -50,6 +55,7 @@ namespace CoffeeShopForms
         private void EmployeeEdit_Click(object sender, EventArgs e)
         {
             employeeEdit = new EmployeeEdit();
+            employeeEdit.CurrentShop = CurrentShop;
             employeeEdit.ShowDialog();
         }
 
@@ -57,6 +63,16 @@ namespace CoffeeShopForms
         {
             menu = new MenuGrv();
             menu.ShowDialog();
+        }
+
+        private void Administrator_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentShop.LoadEmployees();
+            }
+            catch { }
+
         }
     }
 }
