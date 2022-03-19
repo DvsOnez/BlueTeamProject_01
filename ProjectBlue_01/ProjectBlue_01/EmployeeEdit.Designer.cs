@@ -33,6 +33,9 @@
             this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmpPositionGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +45,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 4);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(795, 434);
+            this.gridControl1.Size = new System.Drawing.Size(785, 413);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -77,6 +80,31 @@
             this.EmpPositionGrid.Visible = true;
             this.EmpPositionGrid.VisibleIndex = 2;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(536, 423);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "Add";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(617, 423);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "Remove";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 423);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // EmployeeEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -84,6 +112,9 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources._6179a7473854b15e11196ea6_shutterstock_1389455627;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
             this.Name = "EmployeeEdit";
             this.Text = "Employees";
@@ -100,5 +131,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn EmpPositionGrid;
         private DevExpress.XtraGrid.Columns.GridColumn EmpIDGrid;
         private DevExpress.XtraGrid.Columns.GridColumn EmpNameGrid;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private Button button1;
     }
 }
