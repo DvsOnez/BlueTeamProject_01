@@ -17,16 +17,12 @@ namespace CoffeeShopForms
         public CoffeeShop CurrentShop { get; set; }
         private LogIn logIn;
         private Expenses expenses;
-        private EmployeeEdit employeeEdit;
-        private Salaries salaries;  
+        private EmployeeEdit employeeEdit;         
         private MenuGrv menu;
         public Administrator()
 
         {
             InitializeComponent();
-            CurrentShop = new CoffeeShop();
-
-           
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -37,13 +33,7 @@ namespace CoffeeShopForms
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Salaries_Click(object sender, EventArgs e)
-        {
-            salaries = new Salaries();
-            salaries.ShowDialog();
-        }
+        }     
         
 
         private void ExpensesButton_Click(object sender, EventArgs e)
