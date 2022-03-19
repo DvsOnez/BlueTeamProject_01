@@ -30,24 +30,52 @@
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.EmpPositionGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(221, 114);
+            this.gridControl1.Location = new System.Drawing.Point(3, 4);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(400, 200);
+            this.gridControl1.Size = new System.Drawing.Size(795, 434);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.EmpPositionGrid,
+            this.EmpIDGrid,
+            this.EmpNameGrid});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // EmpNameGrid
+            // 
+            this.EmpNameGrid.Caption = "EmpName";
+            this.EmpNameGrid.Name = "EmpNameGrid";
+            this.EmpNameGrid.Visible = true;
+            this.EmpNameGrid.VisibleIndex = 0;
+            // 
+            // EmpIDGrid
+            // 
+            this.EmpIDGrid.Caption = "EmpID";
+            this.EmpIDGrid.Name = "EmpIDGrid";
+            this.EmpIDGrid.Visible = true;
+            this.EmpIDGrid.VisibleIndex = 1;
+            // 
+            // EmpPositionGrid
+            // 
+            this.EmpPositionGrid.Caption = "EmpPosition";
+            this.EmpPositionGrid.Name = "EmpPositionGrid";
+            this.EmpPositionGrid.Visible = true;
+            this.EmpPositionGrid.VisibleIndex = 2;
             // 
             // EmployeeEdit
             // 
@@ -69,5 +97,8 @@
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn EmpPositionGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn EmpIDGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn EmpNameGrid;
     }
 }
