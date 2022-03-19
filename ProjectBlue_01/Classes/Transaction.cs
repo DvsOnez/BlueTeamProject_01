@@ -8,24 +8,23 @@ using System.Threading.Tasks;
 namespace Classes
 {
     [Serializable]
-    public class Transaction
-    {
+    public class Transaction {
         public const string TRANS_STORAGE = "transStorage.json";
 
         public Guid ID { get; }
         public Guid CustomerID { get; }
         public Guid EmployeeID { get; }
-        public DateTime Date { get; }
         public double TotalPrice { get; set; }
-        public double TransCost { get; set; }
-
 
         public List<TransactionLine> Lines { get; set; }
         public List<Transaction> Transactions { get; set; } = new List<Transaction>();
         public enum PaymentMethod { Cash, CreditCard }
+        public double TransCost { get; set; }
+        public DateTime Date { get; }
+
+
         //public  
-        public Transaction()
-        {
+        public Transaction() {
             ID = Guid.NewGuid();
             Lines = new List<TransactionLine>();
         }
@@ -52,11 +51,11 @@ namespace Classes
             double totalPrice = 0;
             for (int i = 0; i < Lines.Count; i++) {
                 TotalPrice += Lines[i].TotalPrice;
-            }       
+            }
         }
         public void GetTotalCost(List<TransactionLine> lines) {
             //double cost = 0;
-            for (int i = 0; i<lines.Count; i++) {
+            for (int i = 0; i < lines.Count; i++) {
                 TransCost += lines[i].LineCost;
             }
             //TotalCost = cost;   
@@ -64,7 +63,7 @@ namespace Classes
 
         private Transaction _transaction;
         public void SaveTransaction(Transaction transaction) {
-            if(File.Exists("transStorage.json")) {
+            if (File.Exists("transStorage.json")) {
                 //Load
             }
 
@@ -72,9 +71,18 @@ namespace Classes
             File.WriteAllText(TRANS_STORAGE, json);
         }
 
-        private void LoadTransaction() {
+        public void LoadTransaction() {
             string s = File.ReadAllText(TRANS_STORAGE);
-            _transaction = (Transaction)JsonSerializer.Deserialize(s, typeof(Transaction));  
+            _transaction = (Transaction)JsonSerializer.Deserialize(s, typeof(Transaction));
+        }
+
+        public bool CardAvailable(double price) {
+            if (price > 50) {
+                return false;
+            }
+            else {
+                return true;
+            }
         }
     }
 }

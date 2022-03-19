@@ -13,13 +13,14 @@ namespace Classes
         public Guid ID { get; }
         public Guid ProductID { get; }
         public double Price { get; set; } 
-        public double Discount { get; set; }
+        public bool Discount { get; set; }
         public double TotalPrice { get; set; }
         public double LineCost { get; set; }
 
         public TransactionLine()
         {
             ID = Guid.NewGuid();
+            Discount = false;
         }
 
         //public double  GetPrice(int quantity, Product product)
@@ -38,8 +39,10 @@ namespace Classes
             if (Price < discLimit) {
                 return Price;
             }
-            else
+            else {
+                Discount = true;
                 return (Price - (Price * discRate));
+            }
         }
         public void GetTotalPrice(double price) {
             if (price > discLimit) {

@@ -28,8 +28,8 @@ namespace ProjectBlue_01
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            Transaction tr = new Transaction();
+            this.Close();
+            /*Transaction tr = new Transaction();
 
             Product product = new Product();
             product.ID = Guid.NewGuid();
@@ -65,7 +65,7 @@ namespace ProjectBlue_01
             //tr.GetTotalPrice(list);
             tr.GetTotalPrice();
 
-            tr.SaveTransaction(tr);
+            tr.SaveTransaction(tr);*/
         }
     }
 }
