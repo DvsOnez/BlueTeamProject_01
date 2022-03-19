@@ -40,5 +40,11 @@ namespace CoffeeShopForms
             CurrentShop.Employees.Add(emp);
             bsEmployees.ResetBindings(true);
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
