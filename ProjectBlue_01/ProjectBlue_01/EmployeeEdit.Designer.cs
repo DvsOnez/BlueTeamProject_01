@@ -33,10 +33,6 @@
             this.SaveButton = new DevExpress.XtraEditors.SimpleButton();
             this.AddButton = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.EmpIDGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpNameGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpPositionGrid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.EmpSalaryGrid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -54,11 +50,6 @@
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.EmpSalaryGrid,
-            this.EmpPositionGrid,
-            this.EmpNameGrid,
-            this.EmpIDGrid});
             this.gridView1.GridControl = this.gridControlEmployees;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -88,34 +79,6 @@
             this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "simpleButton3";
-            // 
-            // EmpIDGrid
-            // 
-            this.EmpIDGrid.Caption = "EmployeeID";
-            this.EmpIDGrid.Name = "EmpIDGrid";
-            this.EmpIDGrid.Visible = true;
-            this.EmpIDGrid.VisibleIndex = 1;
-            // 
-            // EmpNameGrid
-            // 
-            this.EmpNameGrid.Caption = "EmployeeName";
-            this.EmpNameGrid.Name = "EmpNameGrid";
-            this.EmpNameGrid.Visible = true;
-            this.EmpNameGrid.VisibleIndex = 0;
-            // 
-            // EmpPositionGrid
-            // 
-            this.EmpPositionGrid.Caption = "EmployeePosition";
-            this.EmpPositionGrid.Name = "EmpPositionGrid";
-            this.EmpPositionGrid.Visible = true;
-            this.EmpPositionGrid.VisibleIndex = 2;
-            // 
-            // EmpSalaryGrid
-            // 
-            this.EmpSalaryGrid.Caption = "EmployeeSalary";
-            this.EmpSalaryGrid.Name = "EmpSalaryGrid";
-            this.EmpSalaryGrid.Visible = true;
-            this.EmpSalaryGrid.VisibleIndex = 3;
             // 
             // simpleButton1
             // 
@@ -154,10 +117,6 @@
         private DevExpress.XtraEditors.SimpleButton SaveButton;
         private DevExpress.XtraEditors.SimpleButton AddButton;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpSalaryGrid;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpPositionGrid;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpNameGrid;
-        private DevExpress.XtraGrid.Columns.GridColumn EmpIDGrid;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

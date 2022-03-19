@@ -8,7 +8,7 @@ namespace Classes
 {
     public class Customer : Base
     {
-        public Customer()
+        public Customer() :base()
         {
 
         }
