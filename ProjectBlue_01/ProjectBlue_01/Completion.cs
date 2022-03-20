@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CoffeeShopForms
 {
     public partial class Completion : Form
     {
+        CoffeeShop CurrentShop { get; set; }
+
         public BindingSource bsOrder { get; set; }
 
         public Completion()
@@ -41,16 +44,10 @@ namespace CoffeeShopForms
         }
 
         private void Completion_Load(object sender, EventArgs e) {
-            //CurrentShop.LoadProduct();
-            //bsProducts.DataSource = CurrentShop.Products.FindAll(prod => prod.ProductType.ToString() == "Beverage");
-            //grdBeverage.DataSource = bsProducts.DataSource;
-            //grvBeverage.Columns["ProductCategoryID"].Visible = false;
-            //grvBeverage.Columns["ID"].Visible = false;
-            //bsProducts.ResetBindings(true);
 
-            grdOrder.DataSource = bsOrder.DataSource;
-            grdOrder.Columns["ProductCategoryID"].Visible = false;
-            grdOrder.Columns["ID"].Visible = false;
+            grdOrder.DataSource = CurrentShop.Basket;
+            gridOrder.Columns["ProductCategoryID"].Visible = false;
+            gridOrder.Columns["ID"].Visible = false;
             bsOrder.ResetBindings(true);
         }
     }

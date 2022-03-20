@@ -38,8 +38,10 @@ namespace CoffeeShopForms
         }
 
         private void ADD_Click(object sender, EventArgs e) {
-            Product product = new Product();
-            order.CurrentShop.Basket.Add(product);
+            if (grvBeverage.GetFocusedRow() == null)
+                return;
+            Product product = grvBeverage.GetFocusedRow() as Product;
+            CurrentShop.Basket.Add(product);
         }
     }
 }

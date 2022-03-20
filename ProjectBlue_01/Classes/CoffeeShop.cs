@@ -20,7 +20,7 @@ namespace Classes
         {
             Employees = new List<Employee>();
             SingleCustomer = new Customer();
-            Products = new List<Product>();
+            Basket = new List<Product>();
         }
 
 
