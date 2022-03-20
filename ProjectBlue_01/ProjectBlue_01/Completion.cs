@@ -45,9 +45,16 @@ namespace CoffeeShopForms
 
         private void Completion_Load(object sender, EventArgs e) {
 
-            grdOrder.DataSource = CurrentShop.Basket;
-            grvOrder.Columns["ProductCategoryID"].Visible = false;
+            //grdOrder.DataSource = CurrentShop.Basket;
+            //grvOrder.Columns["ProductCategoryID"].Visible = false;
+            //grvOrder.Columns["ID"].Visible = false;
+            //bsOrder.ResetBindings(true);
+
+            grdOrder.DataSource = CurrentShop.BasketL;
+            grvOrder.Columns["ProductID"].Visible = false;
             grvOrder.Columns["ID"].Visible = false;
+            grvOrder.Columns["LineStr"].Visible = false;
+            grvOrder.Columns["LineCost"].Visible = false;
             bsOrder.ResetBindings(true);
         }
     }

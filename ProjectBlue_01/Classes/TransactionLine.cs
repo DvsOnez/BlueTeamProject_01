@@ -16,21 +16,26 @@ namespace Classes
         public bool Discount { get; set; }
         public double TotalPrice { get; set; }
         public double LineCost { get; set; }
+        public int Quantity { get; set; }
+        public string LineStr { get; set; }
 
-        public TransactionLine()
+        public TransactionLine(int quantity, Product product)
         {
             ID = Guid.NewGuid();
             Discount = false;
+            Price = GetPrice(quantity, product);
+            Quantity = quantity;
+            LineStr = product.Description + " x" + quantity + " :  " + Price.ToString() + "\n";
         }
 
-        //public double  GetPrice(int quantity, Product product)
-        //{
-        //    return quantity * product.Price;
-        //}
-        public void GetPrice(int quantity, Product product)
+        public double  GetPrice(int quantity, Product product)
         {
-            Price = quantity * product.Price;
+            return quantity * product.Price;
         }
+        //public  GetPrice(int quantity, Product product)
+        //{
+        //    Price = quantity * product.Price;
+        //}
         public void GetCost(int quantity, Product product)
         {
             LineCost = quantity * product.Cost;

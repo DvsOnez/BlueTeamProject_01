@@ -13,6 +13,8 @@ namespace CoffeeShopForms
 {
     public partial class Coffee : Form
     {
+        public int _quantity { get; set; }
+
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsProducts { get; set; }
         Order order = new Order();
@@ -42,7 +44,12 @@ namespace CoffeeShopForms
         private void button1_Click(object sender, EventArgs e) {
             Product product = new Product();
             product= grvCoffee.GetFocusedRow() as Product;
-            CurrentShop.Basket.Add(product);
+            
+            _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
+
+            TransactionLine tra = new TransactionLine(_quantity, product);
+            CurrentShop.BasketL.Add(tra);
+            MessageBox.Show(_quantity + " " + product.Description + " Added");
         }
     }
 }
