@@ -50,6 +50,7 @@
             // 
             this.grvFood.GridControl = this.grdFood;
             this.grvFood.Name = "grvFood";
+            this.grvFood.OptionsBehavior.Editable = false;
             // 
             // ADD
             // 

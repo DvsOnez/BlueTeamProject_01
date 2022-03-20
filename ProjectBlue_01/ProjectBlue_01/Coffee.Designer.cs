@@ -50,6 +50,7 @@
             // 
             this.grvCoffee.GridControl = this.grdCoffee;
             this.grvCoffee.Name = "grvCoffee";
+            this.grvCoffee.OptionsBehavior.Editable = false;
             // 
             // ADD
             // 

@@ -43,5 +43,10 @@ namespace CoffeeShopForms
             Product product = grvBeverage.GetFocusedRow() as Product;
             CurrentShop.Basket.Add(product);
         }
+
+        private void grdBeverage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

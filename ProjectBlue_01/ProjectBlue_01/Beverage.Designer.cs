@@ -50,12 +50,14 @@
             this.grdBeverage.TabIndex = 0;
             this.grdBeverage.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvBeverage});
+            this.grdBeverage.Click += new System.EventHandler(this.grdBeverage_Click);
             // 
             // grvBeverage
             // 
             this.grvBeverage.CustomizationFormBounds = new System.Drawing.Rectangle(1618, 342, 264, 272);
             this.grvBeverage.GridControl = this.grdBeverage;
             this.grvBeverage.Name = "grvBeverage";
+            this.grvBeverage.OptionsBehavior.Editable = false;
             // 
             // repositoryItemSpinEdit1
             // 
