@@ -15,7 +15,7 @@ namespace Classes
         public readonly string CustomerFileName = "customer.json";
         public readonly string ProductFileName = "products.json";
         public List<Product> Products { get; set; }
-
+        public List<Product> Basket { get; set; }
         public CoffeeShop()
         {
             Employees = new List<Employee>();

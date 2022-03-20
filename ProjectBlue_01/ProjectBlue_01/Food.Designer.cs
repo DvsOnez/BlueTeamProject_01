@@ -38,19 +38,16 @@
             // 
             // grdFood
             // 
-            this.grdFood.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grdFood.Location = new System.Drawing.Point(2, 3);
+            this.grdFood.Location = new System.Drawing.Point(2, 2);
             this.grdFood.MainView = this.grvFood;
-            this.grdFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdFood.Name = "grdFood";
-            this.grdFood.Size = new System.Drawing.Size(702, 595);
+            this.grdFood.Size = new System.Drawing.Size(614, 446);
             this.grdFood.TabIndex = 0;
             this.grdFood.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvFood});
             // 
             // grvFood
             // 
-            this.grvFood.DetailHeight = 467;
             this.grvFood.GridControl = this.grdFood;
             this.grvFood.Name = "grvFood";
             // 
@@ -58,22 +55,21 @@
             // 
             this.ADD.BackColor = System.Drawing.Color.Tomato;
             this.ADD.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ADD.Location = new System.Drawing.Point(711, 283);
-            this.ADD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ADD.Location = new System.Drawing.Point(622, 212);
             this.ADD.Name = "ADD";
-            this.ADD.Size = new System.Drawing.Size(130, 92);
+            this.ADD.Size = new System.Drawing.Size(114, 69);
             this.ADD.TabIndex = 1;
             this.ADD.Text = "ADD";
             this.ADD.UseVisualStyleBackColor = false;
+            this.ADD.Click += new System.EventHandler(this.ADD_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Tomato;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(711, 383);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(622, 287);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 92);
+            this.button1.Size = new System.Drawing.Size(114, 69);
             this.button1.TabIndex = 2;
             this.button1.Text = "BACK";
             this.button1.UseVisualStyleBackColor = false;
@@ -81,15 +77,14 @@
             // 
             // Food
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.jailbirds_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdFood);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Food";
             this.Text = "Food";
             this.Load += new System.EventHandler(this.Food_Load);

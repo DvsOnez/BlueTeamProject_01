@@ -12,9 +12,12 @@ namespace CoffeeShopForms
 {
     public partial class Completion : Form
     {
+        public BindingSource bsOrder { get; set; }
+
         public Completion()
         {
             InitializeComponent();
+            bsOrder = new BindingSource();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -35,6 +38,20 @@ namespace CoffeeShopForms
             {
                 MessageBox.Show("Your Order is Canceled");
             }
+        }
+
+        private void Completion_Load(object sender, EventArgs e) {
+            //CurrentShop.LoadProduct();
+            //bsProducts.DataSource = CurrentShop.Products.FindAll(prod => prod.ProductType.ToString() == "Beverage");
+            //grdBeverage.DataSource = bsProducts.DataSource;
+            //grvBeverage.Columns["ProductCategoryID"].Visible = false;
+            //grvBeverage.Columns["ID"].Visible = false;
+            //bsProducts.ResetBindings(true);
+
+            grdOrder.DataSource = bsOrder.DataSource;
+            grdOrder.Columns["ProductCategoryID"].Visible = false;
+            grdOrder.Columns["ID"].Visible = false;
+            bsOrder.ResetBindings(true);
         }
     }
 }

@@ -28,33 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.grdOrder = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 452);
-            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(255, 0);
+            this.textBox2.Location = new System.Drawing.Point(488, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(543, 126);
+            this.textBox2.Size = new System.Drawing.Size(310, 126);
             this.textBox2.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(404, 386);
+            this.button1.Location = new System.Drawing.Point(488, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 66);
             this.button1.TabIndex = 2;
@@ -64,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(571, 386);
+            this.button2.Location = new System.Drawing.Point(655, 386);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 66);
             this.button2.TabIndex = 3;
@@ -75,7 +70,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(283, 419);
+            this.radioButton1.Location = new System.Drawing.Point(681, 343);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(51, 19);
             this.radioButton1.TabIndex = 4;
@@ -86,7 +81,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(283, 394);
+            this.radioButton2.Location = new System.Drawing.Point(681, 318);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(85, 19);
             this.radioButton2.TabIndex = 5;
@@ -94,31 +89,49 @@
             this.radioButton2.Text = "Credit Card";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // grdOrder
+            // 
+            this.grdOrder.Location = new System.Drawing.Point(2, 0);
+            this.grdOrder.MainView = this.gridView1;
+            this.grdOrder.Name = "grdOrder";
+            this.grdOrder.Size = new System.Drawing.Size(421, 452);
+            this.grdOrder.TabIndex = 6;
+            this.grdOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grdOrder;
+            this.gridView1.Name = "gridView1";
+            // 
             // Completion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grdOrder);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Name = "Completion";
             this.Text = "Order Review";
+            this.Load += new System.EventHandler(this.Completion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox textBox1;
         private TextBox textBox2;
         private Button button1;
         private Button button2;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
+        private DevExpress.XtraGrid.GridControl grdOrder;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

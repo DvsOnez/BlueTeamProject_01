@@ -16,6 +16,7 @@ namespace CoffeeShopForms
 
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsProducts { get; set; }
+        Order order = new Order();
         public Food()
         {
             InitializeComponent();
@@ -36,13 +37,10 @@ namespace CoffeeShopForms
             grvFood.Columns["ID"].Visible = false;
             bsProducts.ResetBindings(true);
         }
-<<<<<<< Updated upstream
-=======
 
         private void ADD_Click(object sender, EventArgs e) {
             Product product = new Product();
-            order.CurrentShop.OrderProducts.Add(product);
+            order.CurrentShop.Basket.Add(product);
         }
->>>>>>> Stashed changes
     }
 }
