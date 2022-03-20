@@ -30,7 +30,7 @@
         {
             this.grdCoffee = new DevExpress.XtraGrid.GridControl();
             this.grvCoffee = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ADD = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoffee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCoffee)).BeginInit();
@@ -38,42 +38,38 @@
             // 
             // grdCoffee
             // 
-            this.grdCoffee.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grdCoffee.Location = new System.Drawing.Point(2, 3);
+            this.grdCoffee.Location = new System.Drawing.Point(2, 2);
             this.grdCoffee.MainView = this.grvCoffee;
-            this.grdCoffee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdCoffee.Name = "grdCoffee";
-            this.grdCoffee.Size = new System.Drawing.Size(637, 597);
+            this.grdCoffee.Size = new System.Drawing.Size(557, 448);
             this.grdCoffee.TabIndex = 0;
             this.grdCoffee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvCoffee});
             // 
             // grvCoffee
             // 
-            this.grvCoffee.DetailHeight = 467;
             this.grvCoffee.GridControl = this.grdCoffee;
             this.grvCoffee.Name = "grvCoffee";
             // 
-            // button1
+            // ADD
             // 
-            this.button1.BackColor = System.Drawing.Color.Sienna;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(646, 296);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 99);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ADD.BackColor = System.Drawing.Color.Sienna;
+            this.ADD.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ADD.Location = new System.Drawing.Point(565, 222);
+            this.ADD.Name = "ADD";
+            this.ADD.Size = new System.Drawing.Size(115, 74);
+            this.ADD.TabIndex = 1;
+            this.ADD.Text = "ADD";
+            this.ADD.UseVisualStyleBackColor = false;
+            this.ADD.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Sienna;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(646, 403);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(565, 302);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 99);
+            this.button2.Size = new System.Drawing.Size(115, 74);
             this.button2.TabIndex = 2;
             this.button2.Text = "BACK";
             this.button2.UseVisualStyleBackColor = false;
@@ -81,15 +77,14 @@
             // 
             // Coffee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.coffee_cover_v06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdCoffee);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Coffee";
             this.Text = "Coffee";
             this.Load += new System.EventHandler(this.Coffee_Load);
@@ -103,7 +98,7 @@
 
         private DevExpress.XtraGrid.GridControl grdCoffee;
         private DevExpress.XtraGrid.Views.Grid.GridView grvCoffee;
-        private Button button1;
+        private Button ADD;
         private Button button2;
     }
 }

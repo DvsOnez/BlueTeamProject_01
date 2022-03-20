@@ -32,7 +32,7 @@
             this.grdBeverage = new DevExpress.XtraGrid.GridControl();
             this.grvBeverage = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ADD = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdBeverage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvBeverage)).BeginInit();
@@ -41,22 +41,19 @@
             // 
             // grdBeverage
             // 
-            this.grdBeverage.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdBeverage.Location = new System.Drawing.Point(0, 0);
             this.grdBeverage.MainView = this.grvBeverage;
-            this.grdBeverage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grdBeverage.Name = "grdBeverage";
             this.grdBeverage.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1});
-            this.grdBeverage.Size = new System.Drawing.Size(619, 588);
+            this.grdBeverage.Size = new System.Drawing.Size(542, 441);
             this.grdBeverage.TabIndex = 0;
             this.grdBeverage.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvBeverage});
             // 
             // grvBeverage
             // 
-            this.grvBeverage.CustomizationFormBounds = new System.Drawing.Rectangle(1618, 342, 302, 363);
-            this.grvBeverage.DetailHeight = 467;
+            this.grvBeverage.CustomizationFormBounds = new System.Drawing.Rectangle(1618, 342, 264, 272);
             this.grvBeverage.GridControl = this.grdBeverage;
             this.grvBeverage.Name = "grvBeverage";
             // 
@@ -67,26 +64,25 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
-            // button1
+            // ADD
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(626, 327);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 95);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ADD.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ADD.Location = new System.Drawing.Point(548, 245);
+            this.ADD.Name = "ADD";
+            this.ADD.Size = new System.Drawing.Size(114, 71);
+            this.ADD.TabIndex = 1;
+            this.ADD.Text = "ADD";
+            this.ADD.UseVisualStyleBackColor = false;
+            this.ADD.Click += new System.EventHandler(this.ADD_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(626, 429);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(548, 322);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 95);
+            this.button2.Size = new System.Drawing.Size(114, 71);
             this.button2.TabIndex = 2;
             this.button2.Text = "BACK";
             this.button2.UseVisualStyleBackColor = false;
@@ -94,15 +90,14 @@
             // 
             // Beverage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(889, 604);
+            this.ClientSize = new System.Drawing.Size(778, 453);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdBeverage);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Beverage";
             this.Text = "Beverages";
             this.Load += new System.EventHandler(this.Beverage_Load);
@@ -118,7 +113,7 @@
         private DevExpress.XtraGrid.GridControl grdBeverage;
         private DevExpress.XtraGrid.Views.Grid.GridView grvBeverage;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
-        private Button button1;
+        private Button ADD;
         private Button button2;
     }
 }
