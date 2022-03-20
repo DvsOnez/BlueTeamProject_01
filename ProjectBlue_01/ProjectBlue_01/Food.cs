@@ -32,6 +32,8 @@ namespace CoffeeShopForms
             CurrentShop.LoadProduct();
             bsProducts.DataSource = CurrentShop.Products.FindAll(prod => prod.ProductType.ToString() == "Food");
             grdFood.DataSource = bsProducts.DataSource;
+            grvFood.Columns["ProductCategoryID"].Visible = false;
+            grvFood.Columns["ID"].Visible = false;
             bsProducts.ResetBindings(true);
         }
     }
