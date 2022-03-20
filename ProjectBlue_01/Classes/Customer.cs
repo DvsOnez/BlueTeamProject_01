@@ -8,13 +8,13 @@ namespace Classes
 {
     public class Customer : Base
     {
-        public Customer() :base()
+        public Customer() : base()
         {
 
         }
 
         //basket: store products for customer
-      
+
         public void Basket(Product product)
         {
             List<Product> basket = new List<Product>();

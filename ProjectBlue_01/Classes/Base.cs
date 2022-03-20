@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Classes {
-    public class Base {
+namespace Classes
+{
+    public class Base
+    {
         public Guid ID { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
-        public Base() 
+        public Base()
         {
             ID = Guid.NewGuid();
 

@@ -23,7 +23,7 @@ namespace Classes
             Products = new List<Product>();
         }
 
-        
+
         public void SaveEmployees()
         {
             string jsonStr = JsonSerializer.Serialize(Employees);

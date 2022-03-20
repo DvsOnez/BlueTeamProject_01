@@ -19,7 +19,8 @@ namespace Classes
 
         }
 
-        public void ChooseType(){
+        public void ChooseType()
+        {
             Dictionary<ProductTypeEnum, string> productTypes = new Dictionary<ProductTypeEnum, string>();
             productTypes.Add(ProductTypeEnum.Coffee, "Coffee");
             productTypes.Add(ProductTypeEnum.Beverage, "Beverage");
@@ -42,7 +43,7 @@ namespace Classes
         //        Food food = new Food();
         //        food.AddNewFood(product);
         //    }
-            
+
         //}
     }
 }

@@ -12,7 +12,7 @@ namespace Classes
         private const double discRate = 0.15;
         public Guid ID { get; }
         public Guid ProductID { get; }
-        public double Price { get; set; } 
+        public double Price { get; set; }
         public bool Discount { get; set; }
         public double TotalPrice { get; set; }
         public double LineCost { get; set; }
@@ -27,25 +27,32 @@ namespace Classes
         //{
         //    return quantity * product.Price;
         //}
-        public void GetPrice(int quantity, Product product) {
+        public void GetPrice(int quantity, Product product)
+        {
             Price = quantity * product.Price;
         }
-        public void GetCost(int quantity, Product product) {
+        public void GetCost(int quantity, Product product)
+        {
             LineCost = quantity * product.Cost;
         }
-        public double GetTotalPrice(int quantity, Product product) {
+        public double GetTotalPrice(int quantity, Product product)
+        {
             Price = 0;
             GetPrice(quantity, product);
-            if (Price < discLimit) {
+            if (Price < discLimit)
+            {
                 return Price;
             }
-            else {
+            else
+            {
                 Discount = true;
                 return (Price - (Price * discRate));
             }
         }
-        public void GetTotalPrice(double price) {
-            if (price > discLimit) {
+        public void GetTotalPrice(double price)
+        {
+            if (price > discLimit)
+            {
                 Price = (Price - (Price * discRate));
             }
             else

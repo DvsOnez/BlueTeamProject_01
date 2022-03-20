@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace Classes
 {
     [Serializable]
-    public class Transaction {
+    public class Transaction
+    {
         public const string TRANS_STORAGE = "transStorage.json";
 
         public Guid ID { get; }
@@ -24,17 +25,20 @@ namespace Classes
 
 
         //public  
-        public Transaction() {
+        public Transaction()
+        {
             ID = Guid.NewGuid();
             Lines = new List<TransactionLine>();
         }
 
 
 
-        public void AddTransactionLine(Transaction trans, TransactionLine transLine) {
+        public void AddTransactionLine(Transaction trans, TransactionLine transLine)
+        {
             trans.Lines.Add(transLine);
         }
-        public void AddTransactionLine(TransactionLine transLine) { //ver2
+        public void AddTransactionLine(TransactionLine transLine)
+        { //ver2
             Lines.Add(transLine);
         }
 
@@ -47,23 +51,29 @@ namespace Classes
         //    }
         //    return TotalPrice;
         //}
-        public void GetTotalPrice() { //return double?
+        public void GetTotalPrice()
+        { //return double?
             double totalPrice = 0;
-            for (int i = 0; i < Lines.Count; i++) {
+            for (int i = 0; i < Lines.Count; i++)
+            {
                 TotalPrice += Lines[i].TotalPrice;
             }
         }
-        public void GetTotalCost(List<TransactionLine> lines) {
+        public void GetTotalCost(List<TransactionLine> lines)
+        {
             //double cost = 0;
-            for (int i = 0; i < lines.Count; i++) {
+            for (int i = 0; i < lines.Count; i++)
+            {
                 TransCost += lines[i].LineCost;
             }
             //TotalCost = cost;   
         }
 
         private Transaction _transaction;
-        public void SaveTransaction(Transaction transaction) {
-            if (File.Exists("transStorage.json")) {
+        public void SaveTransaction(Transaction transaction)
+        {
+            if (File.Exists("transStorage.json"))
+            {
                 //Load
             }
 
@@ -71,16 +81,20 @@ namespace Classes
             File.WriteAllText(TRANS_STORAGE, json);
         }
 
-        public void LoadTransaction() {
+        public void LoadTransaction()
+        {
             string s = File.ReadAllText(TRANS_STORAGE);
             _transaction = (Transaction)JsonSerializer.Deserialize(s, typeof(Transaction));
         }
 
-        public bool CardAvailable(double price) {
-            if (price > 50) {
+        public bool CardAvailable(double price)
+        {
+            if (price > 50)
+            {
                 return false;
             }
-            else {
+            else
+            {
                 return true;
             }
         }
