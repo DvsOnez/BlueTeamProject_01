@@ -27,6 +27,8 @@ namespace CoffeeShopForms
             CurrentShop.LoadProduct();
             bsProduct.DataSource = CurrentShop.Products;
             grdProduct.DataSource = bsProduct;
+            grvProduct.Columns["ProductCategoryID"].Visible = false;
+            grvProduct.Columns["ID"].Visible = false;
             bsProduct.ResetBindings(true);
         }
 
