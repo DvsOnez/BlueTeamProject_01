@@ -13,7 +13,8 @@ namespace CoffeeShopForms
 {
     public partial class Food : Form
     {
-
+        //public string TransLineStr { get; set; }
+        public int _quantity { get; set; }
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsProducts { get; set; }
         Order order = new Order();
@@ -39,9 +40,20 @@ namespace CoffeeShopForms
         }
 
         private void ADD_Click(object sender, EventArgs e) {
+            if(cbQuantity.SelectedItem != null) { 
+            _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
+
             Product product = new Product();
             product = grvFood.GetFocusedRow() as Product;
-            CurrentShop.Basket.Add(product);
+
+            TransactionLine tra = new TransactionLine(_quantity, product);
+            CurrentShop.BasketL.Add(tra);
+            MessageBox.Show(_quantity + " " + product.Description + " Added");
+            }
+            else {
+                MessageBox.Show("Select  product quantity");
+                //return;
+            }
         }
 
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e) {
