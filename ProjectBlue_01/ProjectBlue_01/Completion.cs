@@ -50,5 +50,17 @@ namespace CoffeeShopForms
             grvOrder.Columns["ID"].Visible = false;
             bsOrder.ResetBindings(true);
         }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (grvOrder.GetFocusedRow() == null)
+                return;
+
+            Product selectedProduct = grvOrder.GetFocusedRow() as Product;
+
+            Guid selectedID = selectedProduct.ID;
+            CurrentShop.Basket.RemoveAll(prod => prod.ID == selectedID);
+            bsOrder.ResetBindings(true);
+        }
     }
 }
