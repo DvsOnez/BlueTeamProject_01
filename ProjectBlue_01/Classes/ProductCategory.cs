@@ -8,16 +8,18 @@ namespace Classes
 {
     public enum ProductTypeEnum
     {
-        Coffee = 0,
-        Beverages = 1,
-        Food = 2,
+        //Coffee = 0,
+        //Beverages = 1,
+        //Food = 2,
+        Coffee,
+        Beverages,
+        Food,
     }
-    public class ProductCategory : Base
-    {
+    public class ProductCategory : Base {
 
-        public ProductCategory() : base()
-        {
-
+        public int ID { get; set; } 
+        public ProductCategory() : base() {
+            ID = 0;
         }
         //public void ChooseCategory(string productType,Product product)
         //{
@@ -36,7 +38,15 @@ namespace Classes
         //        Food food = new Food();
         //        food.AddNewFood(product);
         //    }
-            
+
         //}
+
+        public ProductTypeEnum productType;
+        ProductCategory HotStuff = new ProductCategory() {
+            ID = 222,
+            Code = "111",
+            Description = "Hot Stuff",
+            productType = ProductTypeEnum.Coffee
+        };
     }
 }

@@ -14,6 +14,8 @@ namespace CoffeeShopForms
 {
     public partial class MenuGrv : Form
     {
+
+
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsProduct { get; set; }
         public MenuGrv()

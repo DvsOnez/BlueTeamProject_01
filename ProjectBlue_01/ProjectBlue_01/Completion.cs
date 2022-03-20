@@ -12,9 +12,12 @@ namespace CoffeeShopForms
 {
     public partial class Completion : Form
     {
+        Order order = new Order();
+        public BindingSource bsProducts { get; set; }
         public Completion()
         {
             InitializeComponent();
+            bsProducts = new BindingSource();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -35,6 +38,11 @@ namespace CoffeeShopForms
             {
                 MessageBox.Show("Your Order is Canceled");
             }
+        }
+
+        private void Completion_Load(object sender, EventArgs e) {
+            bsProducts.DataSource = order.currentShop.OrderProducts;
+            grdOrder.DataSource = bsProducts;
         }
     }
 }

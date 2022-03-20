@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CoffeeShopForms
 {
     public partial class Coffee : Form
     {
+        Order order = new Order();
+
         public Coffee()
         {
             InitializeComponent();
@@ -20,6 +23,11 @@ namespace CoffeeShopForms
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ADD_Click(object sender, EventArgs e) {
+            Product product = new Product();
+            order.currentShop.OrderProducts.Add(product);
         }
     }
 }

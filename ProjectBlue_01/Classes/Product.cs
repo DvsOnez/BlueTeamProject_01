@@ -10,7 +10,9 @@ namespace Classes
     {
 
         //public Guid ProductID { get; set; }
-        public Guid ProductCategoryID { get; set; }
+        //public Guid ProductCategoryID { get; set; }
+        public int ProductCategoryID { get; set; }
+
         public double Price { get; set; }
         public double Cost { get; set; }
 

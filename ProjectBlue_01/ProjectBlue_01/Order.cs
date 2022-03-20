@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,9 @@ namespace CoffeeShopForms{
         private Coffee coffee;
         private Beverage beverage;
         private Food food;
+
+        public CoffeeShop currentShop { get; set; }
+
         public Order()
         {
             InitializeComponent();
@@ -52,6 +56,36 @@ namespace CoffeeShopForms{
             food.ShowDialog();
         }
 
-        
+        private void Order_Load(object sender, EventArgs e) {
+            //Mock product data
+            Product freddo = new Product() {
+                ID = Guid.NewGuid(),
+                Code = "1",
+                Description = "freddo",
+                Price = 2.0,
+                Cost = 0.5,
+                ProductCategoryID = 222
+            };
+            Product tea = new Product() {
+                ID = Guid.NewGuid(),
+                Code = "2",
+                Description = "tea",
+                Price = 1.5,
+                Cost = 0.3,
+                ProductCategoryID = 222
+
+            };
+            Product cookie = new Product() {
+                ID = Guid.NewGuid(),
+                Code = "3",
+                Description = "cookie",
+                Price = 2.5,
+                Cost = 1,
+                ProductCategoryID = 222
+            };
+            currentShop.Products.Add(freddo);
+            currentShop.Products.Add(tea);
+            currentShop.Products.Add(cookie);
+        }
     }
 }
