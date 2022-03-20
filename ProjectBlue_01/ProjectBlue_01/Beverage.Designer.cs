@@ -34,9 +34,11 @@
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.ADD = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdBeverage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvBeverage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grdBeverage
@@ -90,6 +92,30 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // cbQuantity
+            // 
+            this.cbQuantity.EditValue = "Quantity";
+            this.cbQuantity.Location = new System.Drawing.Point(548, 186);
+            this.cbQuantity.Name = "cbQuantity";
+            this.cbQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbQuantity.Properties.DropDownRows = 12;
+            this.cbQuantity.Properties.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbQuantity.Size = new System.Drawing.Size(114, 20);
+            this.cbQuantity.TabIndex = 4;
+            // 
             // Beverage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -97,6 +123,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 453);
+            this.Controls.Add(this.cbQuantity);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdBeverage);
@@ -106,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdBeverage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvBeverage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,5 +145,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
         private Button ADD;
         private Button button2;
+        private DevExpress.XtraEditors.ComboBoxEdit cbQuantity;
     }
 }

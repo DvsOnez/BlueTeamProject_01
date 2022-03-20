@@ -42,5 +42,9 @@ namespace CoffeeShopForms
             Product product = new Product();
             order.CurrentShop.Basket.Add(product);
         }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

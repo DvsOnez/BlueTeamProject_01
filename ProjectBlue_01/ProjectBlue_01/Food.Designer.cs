@@ -32,8 +32,10 @@
             this.grvFood = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ADD = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grdFood
@@ -76,6 +78,31 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // cbQuantity
+            // 
+            this.cbQuantity.EditValue = "Quantity";
+            this.cbQuantity.Location = new System.Drawing.Point(622, 153);
+            this.cbQuantity.Name = "cbQuantity";
+            this.cbQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbQuantity.Properties.DropDownRows = 12;
+            this.cbQuantity.Properties.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbQuantity.Size = new System.Drawing.Size(114, 20);
+            this.cbQuantity.TabIndex = 3;
+            this.cbQuantity.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
+            // 
             // Food
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -83,6 +110,7 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.jailbirds_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbQuantity);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdFood);
@@ -91,6 +119,7 @@
             this.Load += new System.EventHandler(this.Food_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +130,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grvFood;
         private Button ADD;
         private Button button1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbQuantity;
     }
 }

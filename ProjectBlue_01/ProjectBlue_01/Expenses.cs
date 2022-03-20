@@ -16,5 +16,9 @@ namespace CoffeeShopForms
         {
             InitializeComponent();
         }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

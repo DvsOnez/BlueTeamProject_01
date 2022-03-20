@@ -32,8 +32,10 @@
             this.grvCoffee = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ADD = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoffee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCoffee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grdCoffee
@@ -76,6 +78,30 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // cbQuantity
+            // 
+            this.cbQuantity.EditValue = "Quantity";
+            this.cbQuantity.Location = new System.Drawing.Point(566, 166);
+            this.cbQuantity.Name = "cbQuantity";
+            this.cbQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbQuantity.Properties.DropDownRows = 12;
+            this.cbQuantity.Properties.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbQuantity.Size = new System.Drawing.Size(114, 20);
+            this.cbQuantity.TabIndex = 4;
+            // 
             // Coffee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -83,6 +109,7 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.coffee_cover_v06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbQuantity);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.grdCoffee);
@@ -91,6 +118,7 @@
             this.Load += new System.EventHandler(this.Coffee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCoffee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCoffee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbQuantity.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +129,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grvCoffee;
         private Button ADD;
         private Button button2;
+        private DevExpress.XtraEditors.ComboBoxEdit cbQuantity;
     }
 }
