@@ -46,5 +46,17 @@ namespace CoffeeShopForms
             this.Close();
 
         }
+
+        private void DeleteButtonEmp_Click(object sender, EventArgs e)
+        {
+            if (gridView1.GetFocusedRow() == null)
+                return;
+
+            Employee selectedEmployee = gridView1.GetFocusedRow() as Employee;
+
+            Guid selectedID = selectedEmployee.ID;
+            CurrentShop.Employees.RemoveAll(emp => emp.ID == selectedID);
+            bsEmployees.ResetBindings(true);
+        }
     }
 }
