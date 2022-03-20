@@ -1,6 +1,7 @@
 ﻿namespace Classes
 {
 
+    public enum EmployeeType { Manager, Cashier, Barista, Waiter }
     [Serializable]
     public class Employee
     {
@@ -10,7 +11,7 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public double SalaryPerMonth { get; set; }
-        public enum EmployeeType { Manager, Cashier, Barista, Waiter }
+        public EmployeeType EmployeeType { get; set; }
 
         public Employee()
         {

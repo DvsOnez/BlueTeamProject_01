@@ -38,11 +38,16 @@ namespace CoffeeShopForms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee();
-            CurrentShop.Employees.Add(emp);
-            bsEmployees.ResetBindings(true);
+            
+            if(CurrentShop.Employees.FindAll(emp => emp.EmployeeType.ToString() == "Manager").Count < 2)
+            {   
+                Employee emp = new Employee();
+                CurrentShop.Employees.Add(emp);
+                bsEmployees.ResetBindings(true);
+            }
+            //CurrentShop.Employees.Add(emp);
+            //bsEmployees.ResetBindings(true);
         }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();

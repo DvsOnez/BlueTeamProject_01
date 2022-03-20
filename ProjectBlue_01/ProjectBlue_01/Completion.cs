@@ -13,7 +13,7 @@ namespace CoffeeShopForms
 {
     public partial class Completion : Form
     {
-        CoffeeShop CurrentShop { get; set; }
+        public CoffeeShop CurrentShop { get; set; }
 
         public BindingSource bsOrder { get; set; }
 
@@ -46,8 +46,8 @@ namespace CoffeeShopForms
         private void Completion_Load(object sender, EventArgs e) {
 
             grdOrder.DataSource = CurrentShop.Basket;
-            gridOrder.Columns["ProductCategoryID"].Visible = false;
-            gridOrder.Columns["ID"].Visible = false;
+            grvOrder.Columns["ProductCategoryID"].Visible = false;
+            grvOrder.Columns["ID"].Visible = false;
             bsOrder.ResetBindings(true);
         }
     }
