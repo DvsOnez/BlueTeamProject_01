@@ -36,5 +36,13 @@ namespace CoffeeShopForms
             grvFood.Columns["ID"].Visible = false;
             bsProducts.ResetBindings(true);
         }
+<<<<<<< Updated upstream
+=======
+
+        private void ADD_Click(object sender, EventArgs e) {
+            Product product = new Product();
+            order.CurrentShop.OrderProducts.Add(product);
+        }
+>>>>>>> Stashed changes
     }
 }
