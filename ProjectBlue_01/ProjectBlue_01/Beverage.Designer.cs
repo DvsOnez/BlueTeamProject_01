@@ -94,7 +94,7 @@
             // 
             // cbQuantity
             // 
-            this.cbQuantity.EditValue = "Quantity";
+            this.cbQuantity.EditValue = "0";
             this.cbQuantity.Location = new System.Drawing.Point(548, 186);
             this.cbQuantity.Name = "cbQuantity";
             this.cbQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -115,6 +115,7 @@
             "12"});
             this.cbQuantity.Size = new System.Drawing.Size(114, 20);
             this.cbQuantity.TabIndex = 4;
+            this.cbQuantity.SelectedIndexChanged += new System.EventHandler(this.cbQuantity_SelectedIndexChanged);
             // 
             // Beverage
             // 

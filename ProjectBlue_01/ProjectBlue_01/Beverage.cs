@@ -39,24 +39,28 @@ namespace CoffeeShopForms
         }
 
         private void ADD_Click(object sender, EventArgs e) {
-            if (cbQuantity.SelectedItem != null) {
-                Product product = grvBeverage.GetFocusedRow() as Product;
-                CurrentShop.Basket.Add(product);
+            _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
 
-                _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
+            if (_quantity != 0) {
+                Product product = grvBeverage.GetFocusedRow() as Product;
+                CurrentShop.Basket.Add(product);             
 
                 TransactionLine tra = new TransactionLine(_quantity, product);
                 CurrentShop.BasketL.Add(tra);
                 MessageBox.Show(_quantity + " " + product.Description + " Added");
             }
             else {
-
+                MessageBox.Show("Select  product quantity");
                 return;
             }
         }
 
         private void grdBeverage_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cbQuantity_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
     }

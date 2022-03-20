@@ -40,8 +40,10 @@ namespace CoffeeShopForms
         }
 
         private void ADD_Click(object sender, EventArgs e) {
-            if(cbQuantity.SelectedItem != null) { 
+
             _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
+
+            if (_quantity != 0) { 
 
             Product product = new Product();
             product = grvFood.GetFocusedRow() as Product;
@@ -52,7 +54,7 @@ namespace CoffeeShopForms
             }
             else {
                 MessageBox.Show("Select  product quantity");
-                //return;
+                return;
             }
         }
 

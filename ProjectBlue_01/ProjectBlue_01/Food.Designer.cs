@@ -80,7 +80,7 @@
             // 
             // cbQuantity
             // 
-            this.cbQuantity.EditValue = "Quantity";
+            this.cbQuantity.EditValue = "0";
             this.cbQuantity.Location = new System.Drawing.Point(622, 153);
             this.cbQuantity.Name = "cbQuantity";
             this.cbQuantity.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
