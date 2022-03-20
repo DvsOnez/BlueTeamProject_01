@@ -24,8 +24,10 @@ namespace CoffeeShopForms
 
         private void MenuGrv_Load(object sender, EventArgs e)
         {
+            CurrentShop.LoadProduct();
             bsProduct.DataSource = CurrentShop.Products;
             grdProduct.DataSource = bsProduct;
+            bsProduct.ResetBindings(true);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -43,6 +45,18 @@ namespace CoffeeShopForms
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+            if (grvProduct.GetFocusedRow() == null)
+                return;
+
+            Product selectedProduct = grvProduct.GetFocusedRow() as Product;
+
+            Guid selectedID= selectedProduct.ID;
+            CurrentShop.Products.RemoveAll(prod => prod.ID == selectedID);
+            bsProduct.ResetBindings(true);
         }
     }
 

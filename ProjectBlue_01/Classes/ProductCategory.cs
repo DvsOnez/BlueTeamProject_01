@@ -9,15 +9,21 @@ namespace Classes
     public enum ProductTypeEnum
     {
         Coffee = 0,
-        Beverages = 1,
+        Beverage = 1,
         Food = 2,
     }
     public class ProductCategory : Base
     {
-
         public ProductCategory() : base()
         {
 
+        }
+
+        public void ChooseType(){
+            Dictionary<ProductTypeEnum, string> productTypes = new Dictionary<ProductTypeEnum, string>();
+            productTypes.Add(ProductTypeEnum.Coffee, "Coffee");
+            productTypes.Add(ProductTypeEnum.Beverage, "Beverage");
+            productTypes.Add(ProductTypeEnum.Food, "Food");
         }
         //public void ChooseCategory(string productType,Product product)
         //{

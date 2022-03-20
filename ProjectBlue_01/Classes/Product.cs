@@ -13,10 +13,11 @@ namespace Classes
         public Guid ProductCategoryID { get; set; }
         public double Price { get; set; }
         public double Cost { get; set; }
+        public ProductTypeEnum ProductType { get; set; } 
 
         public Product() : base()
         {
-
+            ProductCategoryID = new ProductCategory().ID;
         }
 
     }
