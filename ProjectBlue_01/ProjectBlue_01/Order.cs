@@ -14,7 +14,7 @@ namespace CoffeeShopForms{
         public partial class Order : Form
        
     {
-        private Completion Completion;
+        private Completion completion;
         private Coffee coffee;
         private Beverage beverage;
         private Food food;
@@ -27,7 +27,8 @@ namespace CoffeeShopForms{
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-           Completion completion = new Completion();
+           completion = new Completion();
+           completion.CurrentShop = CurrentShop;
            completion.ShowDialog();
         }
 
