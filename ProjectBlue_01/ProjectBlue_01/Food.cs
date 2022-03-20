@@ -40,7 +40,8 @@ namespace CoffeeShopForms
 
         private void ADD_Click(object sender, EventArgs e) {
             Product product = new Product();
-            order.CurrentShop.Basket.Add(product);
+            product = grvFood.GetFocusedRow() as Product;
+            CurrentShop.Basket.Add(product);
         }
 
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e) {
