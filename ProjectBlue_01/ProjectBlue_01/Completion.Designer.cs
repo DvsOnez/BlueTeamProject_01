@@ -34,9 +34,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.grdOrder = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -92,17 +92,17 @@
             // grdOrder
             // 
             this.grdOrder.Location = new System.Drawing.Point(2, 0);
-            this.grdOrder.MainView = this.gridView1;
+            this.grdOrder.MainView = this.gridOrder;
             this.grdOrder.Name = "grdOrder";
             this.grdOrder.Size = new System.Drawing.Size(421, 452);
             this.grdOrder.TabIndex = 6;
             this.grdOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridOrder});
             // 
-            // gridView1
+            // gridOrder
             // 
-            this.gridView1.GridControl = this.grdOrder;
-            this.gridView1.Name = "gridView1";
+            this.gridOrder.GridControl = this.grdOrder;
+            this.gridOrder.Name = "gridOrder";
             // 
             // Completion
             // 
@@ -119,7 +119,7 @@
             this.Text = "Order Review";
             this.Load += new System.EventHandler(this.Completion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +132,6 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private DevExpress.XtraGrid.GridControl grdOrder;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridOrder;
     }
 }
