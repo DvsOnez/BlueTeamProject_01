@@ -15,6 +15,7 @@ namespace CoffeeShopForms
     {
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsEmployees { get; set; }
+        
         public EmployeeEdit()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace CoffeeShopForms
         {
             bsEmployees.DataSource = CurrentShop.Employees;
             gridControlEmployees.DataSource = bsEmployees;
+            gridView1.Columns["ID"].Visible = false;
         }
 
 
