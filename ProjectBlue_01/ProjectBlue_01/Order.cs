@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,11 @@ namespace CoffeeShopForms{
         private Coffee coffee;
         private Beverage beverage;
         private Food food;
+        public CoffeeShop CurrentShop { get; set; }
         public Order()
         {
             InitializeComponent();
+            CurrentShop = new CoffeeShop();
         }
 
         private void ConfirmButton_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace CoffeeShopForms{
         private void CoffeeButton_Click(object sender, EventArgs e)
         {
             coffee = new Coffee();
+            coffee.CurrentShop = CurrentShop;
             coffee.ShowDialog();
 
         }
@@ -43,12 +47,14 @@ namespace CoffeeShopForms{
         private void BeverageButton_Click(object sender, EventArgs e)
         {
             beverage = new Beverage();
+            beverage.CurrentShop = CurrentShop;
             beverage.ShowDialog();
         }
 
         private void FoodButton_Click(object sender, EventArgs e)
         {
             food = new Food();
+            food.CurrentShop = CurrentShop;
             food.ShowDialog();
         }
 

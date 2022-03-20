@@ -9,59 +9,61 @@ namespace Classes
     public class Product : Base
     {
 
-        public Guid ProductID { get; set; }
+        //public Guid ProductID { get; set; }
         public Guid ProductCategoryID { get; set; }
         public double Price { get; set; }
         public double Cost { get; set; }
+        public ProductTypeEnum ProductType { get; set; } 
 
-        public Product()
+        public Product() : base()
         {
-
+            ProductCategoryID = new ProductCategory().ID;
         }
 
     }
 
-    public class Coffee : Product
-    {
-        public const string FILE_NAME = "CoffeeStorage.json";
-        public List<Product> Coffees { get; set; }
-        public Coffee()
-        {
+    //public class Coffee : Product
+    //{
+    //    public const string FILE_NAME = "CoffeeStorage.json";
+    //    public List<Product> Coffees { get; set; }
+    //    public Coffee()
+    //    {
 
-        }
+    //    }
 
-        public void AddNewCoffee(Product product)
-        {
-           Coffees.Add(product);
-        }
-    }
+    //    public void AddNewCoffee(Product product)
+    //    {
+    //       Coffees.Add(product);
+    //    }
+    //}
 
-    public class Beverage : Product
-    {
-        public const string FILE_NAME = "BeverageStorage.json";
-        public List<Product> Beverages { get; set; }
-        public Beverage()
-        {
+    //public class Beverage : Product
+    //{
+    //    public const string FILE_NAME = "BeverageStorage.json";
+    //    public List<Product> Beverages { get; set; }
+    //    public Beverage()
+    //    {
 
-        }
+    //    }
 
-        public void AddNewBeverage(Product product)
-        {
-            Beverages.Add(product);
-        }
-    }
+    //    public void AddNewBeverage(Product product)
+    //    {
+    //        Beverages.Add(product);
+    //    }
+    //}
 
-    public class Food : Product
-    {
-        public const string FILE_NAME = "FoodStorage.json";
-        public List<Product> Foods { get; set; }
-        public Food()
-        {
+    //public class Food : Product
+    //{
+    //    public const string FILE_NAME = "FoodStorage.json";
+    //    public List<Product> Foods { get; set; }
+    //    public Food()
+    //    {
 
-        }
-        public void AddNewFood(Product product)
-        {
-            Foods.Add(product);
-        }
-    }
+    //    }
+    //    public void AddNewFood(Product product)
+    //    {
+    //        Foods.Add(product);
+    //    }
+    //}
+
 }
