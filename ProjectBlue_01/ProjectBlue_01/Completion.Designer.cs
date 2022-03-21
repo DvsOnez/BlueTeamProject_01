@@ -44,7 +44,6 @@
             // 
             // button1
             // 
-            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(488, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 66);
@@ -129,12 +128,12 @@
             // 
             // btnDisc
             // 
+            this.btnDisc.Enabled = false;
             this.btnDisc.Location = new System.Drawing.Point(488, 357);
             this.btnDisc.Name = "btnDisc";
             this.btnDisc.Size = new System.Drawing.Size(79, 23);
             this.btnDisc.TabIndex = 10;
             this.btnDisc.Text = "Apply Discount";
-            this.btnDisc.Visible = false;
             this.btnDisc.Click += new System.EventHandler(this.btnDisc_Click);
             // 
             // Completion
