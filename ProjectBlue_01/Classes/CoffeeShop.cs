@@ -34,8 +34,16 @@ namespace Classes
 
         public void SaveEmployees()
         {
-            string jsonStr = JsonSerializer.Serialize(Employees);
-            File.WriteAllText(EmployeesFileName, jsonStr);
+            if (File.Exists(TRANS_STORAGE)) {
+                LoadTransactions();
+            }
+            if (!CanAdd(Employees)) {
+                string msg = "Can't add";
+            }
+            else {
+                string jsonStr = JsonSerializer.Serialize(Employees);
+                File.WriteAllText(EmployeesFileName, jsonStr);
+            }
         }
 
         public bool LoadEmployees()
@@ -105,6 +113,63 @@ namespace Classes
                 //NEW PROBLEM: parameters don't match               
             }
             return fileExists;
+        }
+        public bool CanAdd(List<Employee> staff) {
+            bool can = true;
+            int _managerCount = 0;
+            int _cashierCount = 0;
+            int _waiterCount = 0;
+            int _baristaCount = 0;
+            foreach (Employee item in staff) {  
+                if (item.EmployeeType == EmployeeType.Manager) { // should be 1 method
+                    _managerCount++;
+                }
+                if (item.EmployeeType == EmployeeType.Cashier) {
+                    _cashierCount++;
+                }
+                if (item.EmployeeType == EmployeeType.Waiter) {
+                    _waiterCount++;
+                }
+                if (item.EmployeeType == EmployeeType.Barista) {
+                    _baristaCount++;
+                }
+                return true;
+
+                if (_managerCount > 1 ) {   // should be another method
+                    //Error msg
+                    return false;
+                }
+                if (_cashierCount > 2) {
+                    //Error msg
+                    return false;
+                }
+                if (_waiterCount > 2) {
+                    //Error msg
+                    return false;
+                }
+                if (_baristaCount > 3) {
+                    //Error msg
+                    return false;
+                }
+
+                if (_managerCount != 1) { //either new method or merge above
+                    //Too few error msg
+                    return false;
+                }
+                if (_cashierCount < 1) {
+                    //Error msg
+                    return false;
+                }
+                if (_waiterCount < 1) {
+                    //Error msg
+                    return false;
+                }
+                if (_baristaCount < 1) {
+                    //Error msg
+                    return false;
+                }
+            }
+            return can;
         }
     }
 }

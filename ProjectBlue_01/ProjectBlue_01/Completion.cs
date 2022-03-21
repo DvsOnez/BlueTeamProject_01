@@ -80,10 +80,17 @@ namespace CoffeeShopForms
                 rbCard.Enabled = false;
             }
 
-            _transDetails =  "Employee: " + trans.EmployeeID + " : " + "Customer: " + _custCode + " : "
-                + trans.Date.ToString();
+            if(_total >= 10) {
+                lblDisc.Text = "Discount: 15%";
+                _total = _total - _total*(0.15);
+            }
+
+            _transDetails =  "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: " 
+                + _total + "\n" + trans.Date.ToString();
 
             textBox2.Text = _transDetails;
+
+
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)

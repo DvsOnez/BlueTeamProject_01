@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnReport = new DevExpress.XtraEditors.SimpleButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdViewTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -60,7 +61,7 @@
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.EditValue = "0";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(653, 97);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(687, 96);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -84,14 +85,14 @@
             // 
             // textBoxYear
             // 
-            this.textBoxYear.Location = new System.Drawing.Point(654, 168);
+            this.textBoxYear.Location = new System.Drawing.Point(688, 167);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 23);
             this.textBoxYear.TabIndex = 2;
             // 
             // monthEdit1
             // 
-            this.monthEdit1.Location = new System.Drawing.Point(653, 60);
+            this.monthEdit1.Location = new System.Drawing.Point(687, 59);
             this.monthEdit1.Name = "monthEdit1";
             this.monthEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -101,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(654, 42);
+            this.label1.Location = new System.Drawing.Point(688, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 4;
@@ -110,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(654, 150);
+            this.label2.Location = new System.Drawing.Point(688, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 15);
             this.label2.TabIndex = 5;
@@ -118,12 +119,20 @@
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(654, 236);
+            this.btnReport.Location = new System.Drawing.Point(712, 315);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(75, 23);
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "show report";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(528, 415);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(260, 23);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "Month result: Income - ( Cost + Salaries + Rent)";
             // 
             // Expenses
             // 
@@ -132,6 +141,7 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.expenses;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -161,5 +171,6 @@
         private Label label1;
         private Label label2;
         private DevExpress.XtraEditors.SimpleButton btnReport;
+        private TextBox textBox1;
     }
 }
