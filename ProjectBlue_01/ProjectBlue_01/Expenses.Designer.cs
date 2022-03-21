@@ -30,7 +30,6 @@
         {
             this.grdTransactions = new DevExpress.XtraGrid.GridControl();
             this.grdViewTransactions = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.monthEdit1 = new DevExpress.XtraScheduler.UI.MonthEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdViewTransactions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,31 +55,6 @@
             // 
             this.grdViewTransactions.GridControl = this.grdTransactions;
             this.grdViewTransactions.Name = "grdViewTransactions";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.EditValue = "0";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(687, 96);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.DropDownRows = 12;
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEdit1.TabIndex = 1;
-            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // textBoxYear
             // 
@@ -147,14 +120,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthEdit1);
             this.Controls.Add(this.textBoxYear);
-            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.grdTransactions);
             this.Name = "Expenses";
             this.Text = "Expenses";
             this.Load += new System.EventHandler(this.Expenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTransactions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdViewTransactions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +136,6 @@
 
         private DevExpress.XtraGrid.GridControl grdTransactions;
         private DevExpress.XtraGrid.Views.Grid.GridView grdViewTransactions;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private TextBox textBoxYear;
         private DevExpress.XtraScheduler.UI.MonthEdit monthEdit1;
         private Label label1;

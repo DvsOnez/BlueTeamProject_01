@@ -40,7 +40,7 @@ namespace CoffeeShopForms
         }
 
         private void Expenses_Load(object sender, EventArgs e) {
-            ////CurrentTransaction.LoadTransaction();
+            //CurrentTransaction.LoadTransaction();
             CurrentShop.LoadTransactions();
             grdTransactions.DataSource = CurrentShop.Transactions;
             bsTransaction.ResetBindings(true);

@@ -107,13 +107,14 @@ namespace Classes
                 
                 Transactions = JsonSerializer.Deserialize<List<Transaction>>(jsonStr);
                 
-                //PROBLEM: returns oonly 1, and I can't add more than 1 transactions 
+                //PROBLEM: returns only 1, and I can't add more than 1 transactions 
                 //SOLUTION: Duplicated the 1st transaction
 
                 //NEW PROBLEM: parameters don't match               
             }
             return fileExists;
         }
+
         public bool CanAdd(List<Employee> staff) {
             bool can = true;
             int _managerCount = 0;

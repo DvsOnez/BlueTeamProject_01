@@ -74,6 +74,9 @@ namespace CoffeeShopForms
             string _transDetails;
             int _custCode = 001;
 
+
+            //var timer = new Timer();
+            DateTime _date  = new DateTime();
             _total = trans.GetTotalPrice(CurrentShop.BasketL);
 
             if(_total > 50) {
@@ -85,10 +88,10 @@ namespace CoffeeShopForms
                 _total = _total - _total*(0.15);
             }
 
-            _transDetails =  "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: " 
-                + _total + "\n" + trans.Date.ToString();
+            _transDetails = "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: "
+                + _total + "\n" + _date.TimeOfDay.ToString();//trans.Date.ToString();
 
-            textBox2.Text = _transDetails;
+            richTextBox1.Text = _transDetails;
 
 
         }
@@ -103,6 +106,20 @@ namespace CoffeeShopForms
             Guid selectedID = selectedProduct.ID;
             CurrentShop.Basket.RemoveAll(prod => prod.ID == selectedID);
             bsOrder.ResetBindings(true);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e) {
+            if (grvOrder.GetFocusedRow() == null)
+                return;
+
+            Product selectedProduct = grvOrder.GetFocusedRow() as Product;
+
+            try {
+                Guid selectedID = selectedProduct.ID;
+                CurrentShop.Basket.RemoveAll(prod => prod.ID == selectedID);
+                bsOrder.ResetBindings(true);
+            }
+            catch (Exception ex) { }
         }
     }
 }

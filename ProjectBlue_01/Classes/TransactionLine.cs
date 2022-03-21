@@ -35,17 +35,13 @@ namespace Classes
         {
             return quantity * product.Price;
         }
-        //public  GetPrice(int quantity, Product product)
-        //{
-        //    Price = quantity * product.Price;
-        //}
         public void GetCost(int quantity, Product product)
         {
             LineCost = quantity * product.Cost;
         }
-        public double GetTotalPrice(int quantity, Product product)
-        {
-            double price = GetPrice(quantity, product);
+        public double GetTotalPrice(int quantity, Product product) // Discount should be checked by transaction, not here 
+        {                                                          // here only the method to return the reduced price
+            double price = GetPrice(quantity, product);            // but tooo many problems, too little time to tackle all
             if (price < discLimit)
             {
                 return price;
@@ -53,31 +49,12 @@ namespace Classes
             else
             {
                 Discount = true;
-                //return (price - (price * discRate));
-                return price;
+                return (price - (price * discRate));
             }
         }
 
         public void ApplyDisc() {
             TotalPrice = (Price - (Price * discRate));
-        }
-        //public void GetTotalPrice(double price)
-        //{
-        //    if (price > discLimit)
-        //    {
-        //        Price = (Price - (Price * discRate));
-        //    }
-        //    else
-        //        Price = price;
-        //}
-        //public void GetTotalPrice(int quantity, Product product) {
-        //    double price = GetPrice(quantity, product);
-
-        //    if (price > discLimit) {
-        //        Price = Price - (Price * discRate);
-        //    }
-        //    else
-        //        Price = price;
-        //}
+        }       
     }
 }
