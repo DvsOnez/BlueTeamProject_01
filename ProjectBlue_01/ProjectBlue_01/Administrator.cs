@@ -18,8 +18,8 @@ namespace CoffeeShopForms
         private LogIn logIn;
         private Expenses expenses;
         private EmployeeEdit employeeEdit;
-         
         private MenuGrv menu;
+
         public Administrator()
 
         {
@@ -45,6 +45,7 @@ namespace CoffeeShopForms
         private void ExpensesButton_Click(object sender, EventArgs e)
         {
             expenses = new Expenses();
+            expenses.CurrentShop = CurrentShop;
             expenses.ShowDialog();
         }
 
@@ -64,11 +65,12 @@ namespace CoffeeShopForms
 
         private void Administrator_Load(object sender, EventArgs e)
         {
-            try
-            {
-                CurrentShop.LoadEmployees();
-            }
-            catch { }
+            //TODO: Must be junk
+            //try
+            //{
+            //    CurrentShop.LoadEmployees();
+            //}
+            //catch { }
 
         }
     }

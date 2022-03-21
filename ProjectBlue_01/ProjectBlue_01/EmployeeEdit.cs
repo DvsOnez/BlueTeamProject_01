@@ -25,9 +25,11 @@ namespace CoffeeShopForms
 
         private void EmployeeEdit_Load(object sender, EventArgs e)
         {
+            CurrentShop.LoadEmployees();
             bsEmployees.DataSource = CurrentShop.Employees;
             gridControlEmployees.DataSource = bsEmployees;
             gridView1.Columns["ID"].Visible = false;
+            bsEmployees.ResetBindings(true);
         }
 
 
@@ -39,21 +41,19 @@ namespace CoffeeShopForms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            newEmployee = new NewEmployee();
-            newEmployee.ShowDialog();
+            //TODO: Clean this 
             //if(CurrentShop.Employees.FindAll(emp => emp.EmployeeType.ToString() == "Manager").Count < 2)
             //{   
-            //    Employee emp = new Employee();
-            //    CurrentShop.Employees.Add(emp);
-            //    bsEmployees.ResetBindings(true);
+                Employee emp = new Employee();
+                CurrentShop.Employees.Add(emp);
+                bsEmployees.ResetBindings(true);
             //}
-            ////CurrentShop.Employees.Add(emp);
-            ////bsEmployees.ResetBindings(true);
+            //CurrentShop.Employees.Add(emp);
+            //bsEmployees.ResetBindings(true);
         }
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void DeleteButtonEmp_Click(object sender, EventArgs e)

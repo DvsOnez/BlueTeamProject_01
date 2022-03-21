@@ -19,7 +19,7 @@ namespace Classes {
         public readonly string EmployeesFileName = "employees.json";
         public readonly string CustomerFileName = "customer.json";
         public readonly string ProductFileName = "products.json";
-        public const string TRANS_STORAGE = "transStorage.json";
+        public readonly string TRANS_STORAGE = "transStorage.json";
 
         public Customer SingleCustomer { get; set; }
         public List<Employee> Employees { get; set; }
@@ -38,14 +38,20 @@ namespace Classes {
         }
 
 
-        public void SaveEmployees() {
-            if (File.Exists(EmployeesFileName)) {
-                //Load employees?
-            }
-            if (CanAdd(Employees)) {
+        public void SaveEmployees()
+        {
+
+            //TODO: check what is the use for this maybe it needs deleting
+            //if (File.Exists(TRANS_STORAGE)) {
+            //    LoadTransactions();
+            //}
+            //if (!CanAdd(Employees)) {
+            //    string msg = "Can't add";
+            //}
+            //else {
                 string jsonStr = JsonSerializer.Serialize(Employees);
                 File.WriteAllText(EmployeesFileName, jsonStr);
-            }
+            //}
         }
 
         public bool LoadEmployees() {//returns true if successful load
@@ -98,9 +104,8 @@ namespace Classes {
                 string jsonStr = File.ReadAllText(TRANS_STORAGE);
 
                 //ERROR: the json value could not be converted to system.collections.generic.list c# "list"
-
-                Transactions = JsonSerializer.Deserialize<List<Transaction>>(jsonStr); //skaei
-
+                //TODO: Fix This
+                Transactions = JsonSerializer.Deserialize<List<Transaction>>(jsonStr);
                 //PROBLEM: returns only 1, and I can't add more than 1 transactions 
                 //SOLUTION: Duplicated the 1st transaction
 

@@ -27,23 +27,27 @@ namespace CoffeeShopForms
 
         }
 
-        private void btnReport_Click(object sender, EventArgs e) {
-            string month = monthEdit1.SelectedItem.ToString();
-            //int month2 = Int32.Parse(monthEdit1.SelectedItem.ToString());
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            //TODO: Check if needed and delete what is not usefull
+            //string month = monthEdit1.SelectedItem.ToString();
+            ////int month2 = Int32.Parse(monthEdit1.SelectedItem.ToString());
 
-            int year = Int32.Parse(textBoxYear.Text);
+            //int year = Int32.Parse(textBoxYear.Text);
 
             //CurrentTransaction.LoadTransaction();
             CurrentShop.LoadTransactions();
-            grdTransactions.DataSource = CurrentShop.Transactions;
+            bsTransaction.DataSource = CurrentShop.Transactions;
+            grdTransactions.DataSource = bsTransaction;
             bsTransaction.ResetBindings(true);
         }
 
         private void Expenses_Load(object sender, EventArgs e) {
+            //TODO: check this too
             //CurrentTransaction.LoadTransaction();
-            CurrentShop.LoadTransactions();
-            grdTransactions.DataSource = CurrentShop.Transactions;
-            bsTransaction.ResetBindings(true);
+            //CurrentShop.LoadTransactions();
+            //grdTransactions.DataSource = CurrentShop.Transactions;
+            //bsTransaction.ResetBindings(true);
         }
     }
 }
