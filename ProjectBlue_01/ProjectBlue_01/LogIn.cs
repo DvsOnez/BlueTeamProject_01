@@ -7,6 +7,8 @@ namespace ProjectBlue_01
     {
         private Order order;
         private Administrator administrator;
+       
+        
         public CoffeeShop CurrentShop { get; set; }
 
         public LogIn()

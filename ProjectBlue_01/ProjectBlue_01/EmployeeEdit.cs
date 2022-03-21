@@ -13,6 +13,7 @@ namespace CoffeeShopForms
 {
     public partial class EmployeeEdit : Form
     {
+        private NewEmployee newEmployee;
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsEmployees { get; set; }
         
@@ -38,15 +39,16 @@ namespace CoffeeShopForms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            
-            if(CurrentShop.Employees.FindAll(emp => emp.EmployeeType.ToString() == "Manager").Count < 2)
-            {   
-                Employee emp = new Employee();
-                CurrentShop.Employees.Add(emp);
-                bsEmployees.ResetBindings(true);
-            }
-            //CurrentShop.Employees.Add(emp);
-            //bsEmployees.ResetBindings(true);
+            newEmployee = new NewEmployee();
+            newEmployee.ShowDialog();
+            //if(CurrentShop.Employees.FindAll(emp => emp.EmployeeType.ToString() == "Manager").Count < 2)
+            //{   
+            //    Employee emp = new Employee();
+            //    CurrentShop.Employees.Add(emp);
+            //    bsEmployees.ResetBindings(true);
+            //}
+            ////CurrentShop.Employees.Add(emp);
+            ////bsEmployees.ResetBindings(true);
         }
         private void BackButton_Click(object sender, EventArgs e)
         {

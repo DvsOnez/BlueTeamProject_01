@@ -12,8 +12,12 @@ using DevExpress.XtraEditors;
 
 namespace CoffeeShopForms
 {
+   
     public partial class MenuGrv : Form
     {
+        private MenuAdd menuAdd;
+
+
         public CoffeeShop CurrentShop { get; set; }
         public BindingSource bsProduct { get; set; }
         public MenuGrv()
@@ -34,9 +38,12 @@ namespace CoffeeShopForms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
-            CurrentShop.Products.Add(product);
-            bsProduct.ResetBindings(true);
+            menuAdd = new MenuAdd();
+            menuAdd.ShowDialog();
+
+            //Product product = new Product();
+            //CurrentShop.Products.Add(product);
+            //bsProduct.ResetBindings(true);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
