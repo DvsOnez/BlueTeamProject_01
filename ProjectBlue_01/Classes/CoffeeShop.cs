@@ -9,20 +9,26 @@ namespace Classes
 {
     public class CoffeeShop
     {
-        public Customer SingleCustomer { get; set; }
-        public List<Employee> Employees { get; set; }
         public readonly string EmployeesFileName = "employees.json";
         public readonly string CustomerFileName = "customer.json";
         public readonly string ProductFileName = "products.json";
+        public const string TRANS_STORAGE = "transStorage.json";
+
+        public Customer SingleCustomer { get; set; }
+        public List<Employee> Employees { get; set; }
         public List<Product> Products { get; set; }
         public List<Product> Basket { get; set; }
         public List<TransactionLine> BasketL { get; set; }
+        public List<Transaction> Transactions { get; set; }
+        public int CustomerCode { get; set; } = 0;
+
         public CoffeeShop()
         {
             Employees = new List<Employee>();
             SingleCustomer = new Customer();
             Basket = new List<Product>();
             BasketL = new List<TransactionLine>();
+            Transactions = new List<Transaction>();
         }
 
 
@@ -77,7 +83,28 @@ namespace Classes
             }
             return fileExists;
         }
+        public void SaveTransaction() {
+            if (File.Exists(TRANS_STORAGE)) {
+                LoadTransactions();
+            }
+            string jsonStr = JsonSerializer.Serialize(Transactions);
+            File.WriteAllText(TRANS_STORAGE, jsonStr);
+        }
+        public bool LoadTransactions() {
+            bool fileExists = File.Exists(TRANS_STORAGE);
+            if (fileExists) {
+                string jsonStr = File.ReadAllText(TRANS_STORAGE);
+                
+                //ERROR: the json value could not be converted to system.collections.generic.list c# "list"
+                
+                Transactions = JsonSerializer.Deserialize<List<Transaction>>(jsonStr);
+                
+                //PROBLEM: returns oonly 1, and I can't add more than 1 transactions 
+                //SOLUTION: Duplicated the 1st transaction
 
-
+                //NEW PROBLEM: parameters don't match               
+            }
+            return fileExists;
+        }
     }
 }
