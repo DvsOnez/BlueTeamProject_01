@@ -39,8 +39,8 @@ namespace Classes {
 
 
         public void SaveEmployees() {
-            if (File.Exists(TRANS_STORAGE)) {
-                LoadTransactions();
+            if (File.Exists(EmployeesFileName)) {
+                //Load employees?
             }
             if (CanAdd(Employees)) {
                 string jsonStr = JsonSerializer.Serialize(Employees);
