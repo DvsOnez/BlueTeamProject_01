@@ -14,7 +14,6 @@ namespace CoffeeShopForms
     public partial class Completion : Form
     {
         public CoffeeShop CurrentShop { get; set; }
-
         public BindingSource bsOrder { get; set; }
 
         public Completion()
@@ -34,8 +33,17 @@ namespace CoffeeShopForms
             
              if (res == DialogResult.OK)
             {
+                Transaction transaction = new Transaction();
+                transaction.Lines = CurrentShop.BasketL;
+                CurrentShop.SaveTransaction();
+                transaction.SaveTransaction(transaction);
+
                 MessageBox.Show("You order is Confirmed");
 
+                Customer customer = new Customer();
+                CurrentShop.SaveCustomer();
+                CurrentShop.CustomerCode++; // should be drawn from customer json, but no time
+                this.Close();
             }
              if (res == DialogResult.Cancel)
             {
@@ -50,12 +58,32 @@ namespace CoffeeShopForms
             //grvOrder.Columns["ID"].Visible = false;
             //bsOrder.ResetBindings(true);
 
+
+            Transaction trans = new Transaction();           
+            //double d = trans.GetTotalPrice(CurrentShop.BasketL);
+            trans.ApplyDisc(CurrentShop.BasketL);
+
             grdOrder.DataSource = CurrentShop.BasketL;
             grvOrder.Columns["ProductID"].Visible = false;
             grvOrder.Columns["ID"].Visible = false;
-            grvOrder.Columns["LineStr"].Visible = false;
+            //grvOrder.Columns["LineStr"].Visible = false;
             grvOrder.Columns["LineCost"].Visible = false;
             bsOrder.ResetBindings(true);
+
+            double _total;
+            string _transDetails;
+            int _custCode = 001;
+
+            _total = trans.GetTotalPrice(CurrentShop.BasketL);
+
+            if(_total > 50) {
+                rbCard.Enabled = false;
+            }
+
+            _transDetails =  "Employee: " + trans.EmployeeID + " : " + "Customer: " + _custCode + " : "
+                + trans.Date.ToString();
+
+            textBox2.Text = _transDetails;
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)

@@ -42,14 +42,21 @@ namespace CoffeeShopForms
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            Product product = new Product();
-            product= grvCoffee.GetFocusedRow() as Product;
-            
+
             _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
 
-            TransactionLine tra = new TransactionLine(_quantity, product);
-            CurrentShop.BasketL.Add(tra);
-            MessageBox.Show(_quantity + " " + product.Description + " Added");
+            if (_quantity != 0) {
+                Product product = new Product();
+                product = grvCoffee.GetFocusedRow() as Product;
+
+                TransactionLine tra = new TransactionLine(_quantity, product);
+                CurrentShop.BasketL.Add(tra);
+                MessageBox.Show(_quantity + " " + product.Description + " Added");
+            }
+            else {
+                MessageBox.Show("Select  product quantity");
+                return;
+            }
         }
     }
 }

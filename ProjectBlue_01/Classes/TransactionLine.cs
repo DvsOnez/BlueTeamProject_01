@@ -12,12 +12,13 @@ namespace Classes
         private const double discRate = 0.15;
         public Guid ID { get; }
         public Guid ProductID { get; }
+        public string Description { get; set; }
         public double Price { get; set; }
         public bool Discount { get; set; }
         public double TotalPrice { get; set; }
         public double LineCost { get; set; }
         public int Quantity { get; set; }
-        public string LineStr { get; set; }
+        //public string LineStr { get; set; }
 
         public TransactionLine(int quantity, Product product)
         {
@@ -25,7 +26,9 @@ namespace Classes
             Discount = false;
             Price = GetPrice(quantity, product);
             Quantity = quantity;
-            LineStr = product.Description + " x" + quantity + " :  " + Price.ToString() + "\n";
+            Description = product.Description;
+            TotalPrice = GetTotalPrice(quantity, product);
+            //LineStr = product.Description + " x" + quantity + " :  " + Price.ToString() + "\n";
         }
 
         public double  GetPrice(int quantity, Product product)
@@ -42,27 +45,31 @@ namespace Classes
         }
         public double GetTotalPrice(int quantity, Product product)
         {
-            Price = 0;
-            GetPrice(quantity, product);
-            if (Price < discLimit)
+            double price = GetPrice(quantity, product);
+            if (price < discLimit)
             {
-                return Price;
+                return price;
             }
             else
             {
                 Discount = true;
-                return (Price - (Price * discRate));
+                //return (price - (price * discRate));
+                return price;
             }
         }
-        public void GetTotalPrice(double price)
-        {
-            if (price > discLimit)
-            {
-                Price = (Price - (Price * discRate));
-            }
-            else
-                Price = price;
+
+        public void ApplyDisc() {
+            TotalPrice = (Price - (Price * discRate));
         }
+        //public void GetTotalPrice(double price)
+        //{
+        //    if (price > discLimit)
+        //    {
+        //        Price = (Price - (Price * discRate));
+        //    }
+        //    else
+        //        Price = price;
+        //}
         //public void GetTotalPrice(int quantity, Product product) {
         //    double price = GetPrice(quantity, product);
 

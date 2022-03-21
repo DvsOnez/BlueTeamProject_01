@@ -31,11 +31,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbCash = new System.Windows.Forms.RadioButton();
+            this.rbCard = new System.Windows.Forms.RadioButton();
             this.grdOrder = new DevExpress.XtraGrid.GridControl();
             this.grvOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.RemoveButton = new DevExpress.XtraEditors.SimpleButton();
+            this.lblDisc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvOrder)).BeginInit();
             this.SuspendLayout();
@@ -68,34 +68,34 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // radioButton1
+            // rbCash
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(681, 343);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 19);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cash";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbCash.AutoSize = true;
+            this.rbCash.Checked = true;
+            this.rbCash.Location = new System.Drawing.Point(681, 343);
+            this.rbCash.Name = "rbCash";
+            this.rbCash.Size = new System.Drawing.Size(51, 19);
+            this.rbCash.TabIndex = 4;
+            this.rbCash.TabStop = true;
+            this.rbCash.Text = "Cash";
+            this.rbCash.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCard
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(681, 318);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 19);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Credit Card";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCard.AutoSize = true;
+            this.rbCard.Location = new System.Drawing.Point(681, 318);
+            this.rbCard.Name = "rbCard";
+            this.rbCard.Size = new System.Drawing.Size(85, 19);
+            this.rbCard.TabIndex = 5;
+            this.rbCard.Text = "Credit Card";
+            this.rbCard.UseVisualStyleBackColor = true;
             // 
             // grdOrder
             // 
             this.grdOrder.Location = new System.Drawing.Point(2, 0);
             this.grdOrder.MainView = this.grvOrder;
             this.grdOrder.Name = "grdOrder";
-            this.grdOrder.Size = new System.Drawing.Size(421, 452);
+            this.grdOrder.Size = new System.Drawing.Size(411, 452);
             this.grdOrder.TabIndex = 6;
             this.grdOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvOrder});
@@ -105,24 +105,24 @@
             this.grvOrder.GridControl = this.grdOrder;
             this.grvOrder.Name = "grvOrder";
             // 
-            // RemoveButton
+            // lblDisc
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(429, 206);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(120, 51);
-            this.RemoveButton.TabIndex = 7;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            this.lblDisc.AutoSize = true;
+            this.lblDisc.Location = new System.Drawing.Point(488, 343);
+            this.lblDisc.Name = "lblDisc";
+            this.lblDisc.Size = new System.Drawing.Size(78, 15);
+            this.lblDisc.TabIndex = 7;
+            this.lblDisc.Text = "Discount: NO";
             // 
             // Completion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RemoveButton);
+            this.Controls.Add(this.lblDisc);
             this.Controls.Add(this.grdOrder);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbCard);
+            this.Controls.Add(this.rbCash);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -140,10 +140,10 @@
         private TextBox textBox2;
         private Button button1;
         private Button button2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbCash;
+        private RadioButton rbCard;
         private DevExpress.XtraGrid.GridControl grdOrder;
         private DevExpress.XtraGrid.Views.Grid.GridView grvOrder;
-        private DevExpress.XtraEditors.SimpleButton RemoveButton;
+        private Label lblDisc;
     }
 }

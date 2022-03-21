@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdTransactions = new DevExpress.XtraGrid.GridControl();
+            this.grdViewTransactions = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxYear = new System.Windows.Forms.TextBox();
             this.monthEdit1 = new DevExpress.XtraScheduler.UI.MonthEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnReport = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // grdTransactions
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 11);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(400, 200);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grdTransactions.Location = new System.Drawing.Point(-1, 11);
+            this.grdTransactions.MainView = this.grdViewTransactions;
+            this.grdTransactions.Name = "grdTransactions";
+            this.grdTransactions.Size = new System.Drawing.Size(356, 440);
+            this.grdTransactions.TabIndex = 0;
+            this.grdTransactions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdViewTransactions});
             // 
-            // gridView1
+            // grdViewTransactions
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.grdViewTransactions.GridControl = this.grdTransactions;
+            this.grdViewTransactions.Name = "grdViewTransactions";
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.EditValue = "Month";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(638, 117);
+            this.comboBoxEdit1.EditValue = "0";
+            this.comboBoxEdit1.Location = new System.Drawing.Point(653, 97);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -79,21 +82,48 @@
             this.comboBoxEdit1.TabIndex = 1;
             this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
-            // textBox1
+            // textBoxYear
             // 
-            this.textBox1.Location = new System.Drawing.Point(638, 247);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBoxYear.Location = new System.Drawing.Point(654, 168);
+            this.textBoxYear.Name = "textBoxYear";
+            this.textBoxYear.Size = new System.Drawing.Size(100, 23);
+            this.textBoxYear.TabIndex = 2;
             // 
             // monthEdit1
             // 
-            this.monthEdit1.Location = new System.Drawing.Point(638, 143);
+            this.monthEdit1.Location = new System.Drawing.Point(653, 60);
             this.monthEdit1.Name = "monthEdit1";
             this.monthEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.monthEdit1.Size = new System.Drawing.Size(100, 20);
             this.monthEdit1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(654, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Month";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(654, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Year";
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(654, 236);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(75, 23);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "show report";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Expenses
             // 
@@ -102,14 +132,18 @@
             this.BackgroundImage = global::CoffeeShopForms.Properties.Resources.expenses;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.monthEdit1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.comboBoxEdit1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.grdTransactions);
             this.Name = "Expenses";
             this.Text = "Expenses";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Expenses_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewTransactions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monthEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -119,10 +153,13 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl grdTransactions;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdViewTransactions;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private TextBox textBox1;
+        private TextBox textBoxYear;
         private DevExpress.XtraScheduler.UI.MonthEdit monthEdit1;
+        private Label label1;
+        private Label label2;
+        private DevExpress.XtraEditors.SimpleButton btnReport;
     }
 }
