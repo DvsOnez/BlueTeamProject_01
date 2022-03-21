@@ -35,8 +35,8 @@ namespace CoffeeShopForms
             {
                 Transaction transaction = new Transaction();
                 transaction.Lines = CurrentShop.BasketL;
-                CurrentShop.SaveTransaction();
-                transaction.SaveTransaction(transaction);
+                //CurrentShop.SaveTransaction();
+                //transaction.SaveTransaction(transaction);
 
                 MessageBox.Show("You order is Confirmed");
 

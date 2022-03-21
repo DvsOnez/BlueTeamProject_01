@@ -10,6 +10,7 @@ namespace Classes
     [Serializable]
     public class Transaction
     {
+        public TransactionLine TransactionLine { get; set; }
         private const double discLimit = 10;
         private const double discRate = 0.15;
         public const string TRANS_STORAGE = "transStorage.json";
@@ -53,42 +54,26 @@ namespace Classes
             }
             return totalPrice;
         }
-        //public void GetTotalPrice()
-        //{ //return double?
-        //    double totalPrice = 0;
-        //    for (int i = 0; i < Lines.Count; i++)
-        //    {
-        //        TotalPrice += Lines[i].TotalPrice;
-        //    }
-        //}
         public void GetTotalCost(List<TransactionLine> lines)
         {
-            //double cost = 0;
             for (int i = 0; i < lines.Count; i++)
             {
                 TransCost += lines[i].LineCost;
             }
-            //TotalCost = cost;   
         }
 
         public double ApplyDisc(List<TransactionLine> lines) {
             double price = GetTotalPrice(lines);
             if(price > discLimit) {
                 return (price - (price * discRate));
+                //TODO: Dicount per line
+                TransactionLine.ApplyDisc();
             }
             else {
                 return price;
             }
         }
-        public void ApplyDiscount(List<TransactionLine> lines) {
-            double price = GetTotalPrice(lines);
-            if (price > discLimit) {
-                //lines.
-            }
-            else {
-                
-            }
-        }
+
         private Transaction _transaction;
         public void SaveTransaction(Transaction transaction)
         {

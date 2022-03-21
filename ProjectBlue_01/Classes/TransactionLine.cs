@@ -43,13 +43,14 @@ namespace Classes
         {                                                          // here only the method to return the reduced price
             double price = GetPrice(quantity, product);            // but tooo many problems, too little time to tackle all
             if (price < discLimit)
-            {
+            {                                                      // I know it makes no sense this way, no time 
                 return price;
             }
             else
             {
                 Discount = true;
-                return (price - (price * discRate));
+                //return (price - (price * discRate));
+                return price;
             }
         }
 
