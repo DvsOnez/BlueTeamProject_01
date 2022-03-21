@@ -21,7 +21,7 @@ namespace Classes {
         public readonly string ProductFileName = "products.json";
         public readonly string TRANS_STORAGE = "transStorage.json";
 
-        public Customer SingleCustomer { get; set; }
+        public Customer Customer { get; set; }
         public List<Employee> Employees { get; set; }
         public List<Product> Products { get; set; }
         public List<Product> Basket { get; set; }
@@ -31,7 +31,7 @@ namespace Classes {
 
         public CoffeeShop() {
             Employees = new List<Employee>();
-            SingleCustomer = new Customer();
+            //Customer = new Customer();
             Basket = new List<Product>();
             BasketL = new List<TransactionLine>();
             Transactions = new List<Transaction>();
@@ -63,19 +63,19 @@ namespace Classes {
             return fileExists;
         }
 
-        public void SaveCustomer() {
-            string jsonStr = JsonSerializer.Serialize(SingleCustomer);
-            File.WriteAllText(CustomerFileName, jsonStr);
-        }
+        //public void SaveCustomer() {
+        //    string jsonStr = JsonSerializer.Serialize(SingleCustomer);
+        //    File.WriteAllText(CustomerFileName, jsonStr);
+        //}
 
-        public bool LoadCustomer() {//returns true if successful load
-            bool fileExists = File.Exists(CustomerFileName);
-            if (fileExists) {
-                string jsonStr = File.ReadAllText(CustomerFileName);
-                SingleCustomer = JsonSerializer.Deserialize<Customer>(jsonStr);
-            }
-            return fileExists;
-        }
+        //public bool LoadCustomer() {//returns true if successful load
+        //    bool fileExists = File.Exists(CustomerFileName);
+        //    if (fileExists) {
+        //        string jsonStr = File.ReadAllText(CustomerFileName);
+        //        SingleCustomer = JsonSerializer.Deserialize<Customer>(jsonStr);
+        //    }
+        //    return fileExists;
+        //}
 
 
         public void SaveProduct() {

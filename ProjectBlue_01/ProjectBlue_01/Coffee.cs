@@ -45,13 +45,18 @@ namespace CoffeeShopForms
 
             _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
 
-            if (_quantity != 0) {
+            if (_quantity > 0) {
+                Customer customer = new Customer();
                 Product product = new Product();
                 product = grvCoffee.GetFocusedRow() as Product;
+                for (int i = 0; i <= _quantity; i++)
+                {
+                    customer.AddBasket(product);
+                }
 
-                TransactionLine tra = new TransactionLine(_quantity, product);
-                CurrentShop.BasketL.Add(tra);
-                MessageBox.Show(_quantity + " " + product.Description + " Added");
+                //TransactionLine tra = new TransactionLine(_quantity, product);
+                //CurrentShop.BasketL.Add(tra);
+                //MessageBox.Show(_quantity + " " + product.Description + " Added");
             }
             else {
                 MessageBox.Show("Select  product quantity");

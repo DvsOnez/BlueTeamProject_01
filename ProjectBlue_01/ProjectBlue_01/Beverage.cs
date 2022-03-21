@@ -45,9 +45,9 @@ namespace CoffeeShopForms
                 Product product = grvBeverage.GetFocusedRow() as Product;
                 CurrentShop.Basket.Add(product);             
 
-                TransactionLine tra = new TransactionLine(_quantity, product);
-                CurrentShop.BasketL.Add(tra);
-                MessageBox.Show(_quantity + " " + product.Description + " Added");
+                //TransactionLine tra = new TransactionLine(_quantity, product);
+                //CurrentShop.BasketL.Add(tra);
+                //MessageBox.Show(_quantity + " " + product.Description + " Added");
             }
             else {
                 MessageBox.Show("Select  product quantity");

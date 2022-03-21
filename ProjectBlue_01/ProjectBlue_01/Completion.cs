@@ -33,16 +33,16 @@ namespace CoffeeShopForms
             
              if (res == DialogResult.OK)
             {
-                Transaction transaction = new Transaction();
-                transaction.Lines = CurrentShop.BasketL;
+                //Transaction transaction = new Transaction();
+                //transaction.Lines = CurrentShop.BasketL;
                 //CurrentShop.SaveTransaction();
                 //transaction.SaveTransaction(transaction);
 
                 MessageBox.Show("You order is Confirmed");
 
-                Customer customer = new Customer();
-                CurrentShop.SaveCustomer();
-                CurrentShop.CustomerCode++; // should be drawn from customer json, but no time
+                //Customer customer = new Customer();
+                //CurrentShop.SaveCustomer();
+                //CurrentShop.CustomerCode++; // should be drawn from customer json, but no time
                 this.Close();
             }
              if (res == DialogResult.Cancel)
@@ -53,17 +53,17 @@ namespace CoffeeShopForms
 
         private void Completion_Load(object sender, EventArgs e) {
 
-            //grdOrder.DataSource = CurrentShop.Basket;
-            //grvOrder.Columns["ProductCategoryID"].Visible = false;
-            //grvOrder.Columns["ID"].Visible = false;
-            //bsOrder.ResetBindings(true);
+            grdOrder.DataSource = CurrentShop.Basket;
+            grvOrder.Columns["ProductCategoryID"].Visible = false;
+            grvOrder.Columns["ID"].Visible = false;
+            bsOrder.ResetBindings(true);
 
 
-            Transaction trans = new Transaction();           
-            //double d = trans.GetTotalPrice(CurrentShop.BasketL);
-            trans.ApplyDisc(CurrentShop.BasketL);
+            //Transaction trans = new Transaction();           
+            ////double d = trans.GetTotalPrice(CurrentShop.BasketL);
+            //trans.ApplyDisc(CurrentShop.BasketL);
 
-            grdOrder.DataSource = CurrentShop.BasketL;
+            grdOrder.DataSource = CurrentShop.Basket;
             grvOrder.Columns["ProductID"].Visible = false;
             grvOrder.Columns["ID"].Visible = false;
             //grvOrder.Columns["LineStr"].Visible = false;
@@ -77,22 +77,22 @@ namespace CoffeeShopForms
 
             //var timer = new Timer();
             DateTime _date  = new DateTime();
-            _total = trans.GetTotalPrice(CurrentShop.BasketL);
+            //_total = trans.GetTotalPrice(CurrentShop.BasketL);
 
-            if(_total > 50) {
-                rbCard.Enabled = false;
-            }
+            //if(_total > 50) {
+            //    rbCard.Enabled = false;
+            //}
 
-            if(_total >= 10) {
-                lblDisc.Text = "Discount: 15%";
-                _total = _total - _total*(0.15);
-                btnDisc.Enabled = true;
-            }
+            //if(_total >= 10) {
+            //    lblDisc.Text = "Discount: 15%";
+            //    _total = _total - _total*(0.15);
+            //    btnDisc.Enabled = true;
+            //}
 
-            _transDetails = "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: "
-                + _total + "\n" + _date.TimeOfDay.ToString();//trans.Date.ToString();
+            //_transDetails = "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: "
+            //    + _total + "\n" + _date.TimeOfDay.ToString();//trans.Date.ToString();
 
-            richTextBox1.Text = _transDetails;
+            //richTextBox1.Text = _transDetails;
 
 
         }

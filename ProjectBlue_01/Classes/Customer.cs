@@ -8,18 +8,20 @@ namespace Classes
 {
     public class Customer : Base
     {
+        public List<Product> Basket { get; set; }
         public Customer() : base()
         {
-
+            Basket = new List<Product>();
         }
 
         //basket: store products for customer
 
-        public void Basket(Product product)
+        public void AddBasket(Product product)
         {
-            List<Product> basket = new List<Product>();
-            basket.Add(product);
+            //List<Product> basket = new List<Product>();
+            Basket.Add(product);
 
+           
             // just in case
             // discount and totalPrice calculation method
             //Discount(basket);
