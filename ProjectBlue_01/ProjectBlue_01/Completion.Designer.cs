@@ -37,12 +37,14 @@
             this.lblDisc = new System.Windows.Forms.Label();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnDisc = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(488, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 66);
@@ -102,7 +104,7 @@
             // lblDisc
             // 
             this.lblDisc.AutoSize = true;
-            this.lblDisc.Location = new System.Drawing.Point(488, 343);
+            this.lblDisc.Location = new System.Drawing.Point(488, 339);
             this.lblDisc.Name = "lblDisc";
             this.lblDisc.Size = new System.Drawing.Size(78, 15);
             this.lblDisc.TabIndex = 7;
@@ -125,11 +127,22 @@
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
             // 
+            // btnDisc
+            // 
+            this.btnDisc.Location = new System.Drawing.Point(488, 357);
+            this.btnDisc.Name = "btnDisc";
+            this.btnDisc.Size = new System.Drawing.Size(79, 23);
+            this.btnDisc.TabIndex = 10;
+            this.btnDisc.Text = "Apply Discount";
+            this.btnDisc.Visible = false;
+            this.btnDisc.Click += new System.EventHandler(this.btnDisc_Click);
+            // 
             // Completion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDisc);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblDisc);
@@ -158,5 +171,6 @@
         private Label lblDisc;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
         private RichTextBox richTextBox1;
+        private DevExpress.XtraEditors.SimpleButton btnDisc;
     }
 }

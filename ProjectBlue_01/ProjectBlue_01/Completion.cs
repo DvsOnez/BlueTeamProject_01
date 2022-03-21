@@ -86,6 +86,7 @@ namespace CoffeeShopForms
             if(_total >= 10) {
                 lblDisc.Text = "Discount: 15%";
                 _total = _total - _total*(0.15);
+                btnDisc.Enabled = true;
             }
 
             _transDetails = "Employee: " + trans.EmployeeID + "\nCustomer: " + _custCode + "\nTotal: "
@@ -120,6 +121,10 @@ namespace CoffeeShopForms
                 bsOrder.ResetBindings(true);
             }
             catch (Exception ex) { }
+        }
+
+        private void btnDisc_Click(object sender, EventArgs e) {
+
         }
     }
 }
