@@ -39,11 +39,24 @@ namespace CoffeeShopForms
         }
 
         private void ADD_Click(object sender, EventArgs e) {
+
             _quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
 
-            if (_quantity != 0) {
-                Product product = grvBeverage.GetFocusedRow() as Product;
-                CurrentShop.Basket.Add(product);             
+            if (_quantity > 0)
+            {
+                Product product = new Product();
+                product = grvBeverage.GetFocusedRow() as Product;
+                CurrentShop.Transaction.TransactionLine = new TransactionLine(_quantity, product);
+                CurrentShop.TransactionLines.Add(CurrentShop.TransactionLine);
+                for (int i = 0; i < _quantity; i++)
+                {
+                    CurrentShop.Customer.AddBasket(product);
+                }
+                //_quantity = Int32.Parse(cbQuantity.SelectedItem.ToString());
+
+                //if (_quantity != 0) {
+                //    Product product = grvBeverage.GetFocusedRow() as Product;
+                //    CurrentShop.Basket.Add(product);             
 
                 //TransactionLine tra = new TransactionLine(_quantity, product);
                 //CurrentShop.BasketL.Add(tra);

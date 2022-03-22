@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
+    public enum PaymentMethod { Cash, CreditCard }
+
     [Serializable]
     public class Transaction
     {
         public TransactionLine TransactionLine { get; set; }
-        private const double discLimit = 10;
-        private const double discRate = 0.15;
+        private const double DISCOUNT_LIMIT = 10;
+        private const double DISCOUNT_RATE = 0.15;
         public const string TRANS_STORAGE = "transStorage.json";
 
         public Guid ID { get; }
@@ -20,19 +22,44 @@ namespace Classes
         public Guid EmployeeID { get; }
         public double TotalPrice { get; set; }
 
-        public List<TransactionLine> TransactionLines { get; set; }
+        //public List<TransactionLine> TransactionLines { get; set; }
         public List<Transaction> Transactions { get; set; } = new List<Transaction>();
-        public enum PaymentMethod { Cash, CreditCard }
         public double TransCost { get; set; }
         public DateTime Date { get; }
+        CoffeeShop CoffeeShop { get; set; }
 
 
         //public  
         public Transaction()
         {
-            ID = Guid.NewGuid();
-            TransactionLines = new List<TransactionLine>();
+            ID = Guid.NewGuid(); 
+            //CustomerID = CoffeeShop.Customer.ID;
+            //EmployeeID = CoffeeShop.Employees.First().ID;
+            Date = DateTime.Now;
         }
+
+        //private double _totalPrice;
+        //private double _discount;
+        //public void DoTransaction()
+        //{
+            
+        //    foreach (TransactionLine item in CoffeeShop.TransactionLines)
+        //    {
+        //        _totalPrice = item.Price* item.Quantity;
+        //        _discount = item.Price * DISCOUNT_RATE;
+        //    }
+        //    if (_totalPrice > DISCOUNT_LIMIT)
+        //    {
+        //        TransactionLine.Discount = _discount;
+        //        TransactionLine.TotalPrice =_totalPrice - _discount;
+        //    }
+        //    else
+        //    {
+        //        _discount = 0;
+        //        TransactionLine.TotalPrice = _totalPrice;
+        //        TransactionLine.Discount = _discount;
+        //    }
+        //}
 
 
 

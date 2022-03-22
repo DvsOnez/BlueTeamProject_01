@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,9 +38,9 @@ namespace CoffeeShopForms
                 //transaction.Lines = CurrentShop.BasketL;
                 //CurrentShop.SaveTransaction();
                 //transaction.SaveTransaction(transaction);
-
+                CurrentShop.Transactions.Add(CurrentShop.Transaction);
                 MessageBox.Show("You order is Confirmed");
-
+                CurrentShop.SaveTransaction();
                 //Customer customer = new Customer();
                 //CurrentShop.SaveCustomer();
                 //CurrentShop.CustomerCode++; // should be drawn from customer json, but no time
@@ -51,9 +52,10 @@ namespace CoffeeShopForms
             }
         }
 
+        private string _addTransaction;
         private void Completion_Load(object sender, EventArgs e) {
 
-            grdOrder.DataSource = CurrentShop.Basket;
+            grdOrder.DataSource = CurrentShop.Customer.Basket;
             grvOrder.Columns["ProductCategoryID"].Visible = false;
             grvOrder.Columns["ID"].Visible = false;
             bsOrder.ResetBindings(true);
@@ -63,20 +65,20 @@ namespace CoffeeShopForms
             ////double d = trans.GetTotalPrice(CurrentShop.BasketL);
             //trans.ApplyDisc(CurrentShop.BasketL);
 
-            grdOrder.DataSource = CurrentShop.Basket;
-            grvOrder.Columns["ProductID"].Visible = false;
+            grdOrder.DataSource = CurrentShop.Customer.Basket;
+            //grvOrder.Columns["ProductID"].Visible = false;
             grvOrder.Columns["ID"].Visible = false;
             //grvOrder.Columns["LineStr"].Visible = false;
-            grvOrder.Columns["LineCost"].Visible = false;
+            //grvOrder.Columns["LineCost"].Visible = false;
             bsOrder.ResetBindings(true);
 
-            double _total;
-            string _transDetails;
-            int _custCode = 001;
+            //double _total;
+            //string _transDetails;
+            //int _custCode = 001;
 
 
             //var timer = new Timer();
-            DateTime _date  = new DateTime();
+            //DateTime _date  = new DateTime();
             //_total = trans.GetTotalPrice(CurrentShop.BasketL);
 
             //if(_total > 50) {
@@ -93,21 +95,33 @@ namespace CoffeeShopForms
             //    + _total + "\n" + _date.TimeOfDay.ToString();//trans.Date.ToString();
 
             //richTextBox1.Text = _transDetails;
+            //foreach (TransactionLine items in CurrentShop.TransactionLines)
+            //{
+            //  richTextBox1.Text += items.ToString();
+            //}
 
+            if (CurrentShop.Transaction.TransactionLine.GiveDiscount()) {
+                _addTransaction = $" Product: {CurrentShop.Transaction.TransactionLine.Description} \n Quantity: {CurrentShop.Transaction.TransactionLine.Quantity} \n Price: {CurrentShop.Transaction.TransactionLine.Price} \n Discount: {CurrentShop.Transaction.TransactionLine.Discount} \n Total Price: {CurrentShop.Transaction.TransactionLine.TotalPrice} \n Date: {CurrentShop.Transaction.Date} ";
+            }
+            else
+            {
+                _addTransaction = $" Product: {CurrentShop.Transaction.TransactionLine.Description} \n Quantity: {CurrentShop.Transaction.TransactionLine.Quantity} \n Price: {CurrentShop.Transaction.TransactionLine.Price} \n Discount: {CurrentShop.Transaction.TransactionLine.Discount} \n Total Price: {CurrentShop.Transaction.TransactionLine.TotalPrice} \n Date: {CurrentShop.Transaction.Date} ";
+            }
+            richTextBox1.Text += _addTransaction;
 
-        }
+    }
 
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-            if (grvOrder.GetFocusedRow() == null)
-                return;
+        //private void RemoveButton_Click(object sender, EventArgs e)
+        //{
+        //    if (grvOrder.GetFocusedRow() == null)
+        //        return;
 
-            Product selectedProduct = grvOrder.GetFocusedRow() as Product;
+        //    Product selectedProduct = grvOrder.GetFocusedRow() as Product;
 
-            Guid selectedID = selectedProduct.ID;
-            CurrentShop.Basket.RemoveAll(prod => prod.ID == selectedID);
-            bsOrder.ResetBindings(true);
-        }
+        //    Guid selectedID = selectedProduct.ID;
+        //    CurrentShop.Basket.RemoveAll(prod => prod.ID == selectedID);
+        //    bsOrder.ResetBindings(true);
+        //}
 
         private void btnRemove_Click(object sender, EventArgs e) {
             if (grvOrder.GetFocusedRow() == null)

@@ -22,19 +22,24 @@ namespace Classes {
         public readonly string TRANS_STORAGE = "transStorage.json";
 
         public Customer Customer { get; set; }
+        public Transaction Transaction { get; set; }
+        public TransactionLine TransactionLine { get; set; }
         public List<Employee> Employees { get; set; }
         public List<Product> Products { get; set; }
         public List<Product> Basket { get; set; }
-        public List<TransactionLine> BasketL { get; set; }
+        public List<TransactionLine> TransactionLines { get; set; }
         public List<Transaction> Transactions { get; set; }
         public int CustomerCode { get; set; } = 0;
 
         public CoffeeShop() {
-            Employees = new List<Employee>();
-            //Customer = new Customer();
-            Basket = new List<Product>();
-            BasketL = new List<TransactionLine>();
+            //Employees = new List<Employee>();
+            Customer = new Customer();
+            //Basket = new List<Product>();
+            TransactionLines = new List<TransactionLine>();
             Transactions = new List<Transaction>();
+            Transaction=new Transaction();
+            //TransactionLine= TransactionLine(int quantity, Product product);
+
         }
 
 
